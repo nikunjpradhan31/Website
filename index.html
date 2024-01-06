@@ -4,7 +4,7 @@
     <title>Nikunj Pradhan</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+   <style>
         body {
             background-color: #eaefd9;
             margin: 0;
@@ -41,7 +41,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: justify; /* Justify the text */
+            text-align: justify;
             text-justify: inter-word;
         }
 
@@ -79,7 +79,7 @@
             margin-right: 10px;
         }
 
-        .menu {
+        .menu1 {
             display: none;
             position: fixed; /* Change from absolute to fixed */
             background-color: #f9f9f9;
@@ -90,7 +90,7 @@
             border-radius: 10px;
         }
 
-        .menu a {
+        .menu1 a {
             padding: 5px;
             display: block;
             text-decoration: none;
@@ -122,21 +122,65 @@
             border-radius: 15px; /* Rounded corners */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
             margin-bottom: 25px; /* Add margin between each .exp-container */
+        }
 
-            }
-
-            .exp-title {
+        .exp-title {
             font-size: 20px;
             font-weight: bold;
             color: #fff3f3;
             margin-bottom: 25px; /* Adjusted margin-bottom for spacing */
             }
 
-            .exp-content {
+        .exp-content {
             font-size: 16px;
             color: #fff3f3;
             }
 
+        .menu-container{
+                display: none;
+            }
+
+        .item-container{
+                display: block;
+            }
+            @media only screen and (max-width: 600px) {
+                .section {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    padding-top: 60px;
+                    text-align: center;
+                }
+                .menu-container{
+                    display: block;
+                }
+                .item-container{
+                    display:none;
+                }
+                .menu2 {
+                    display: none;
+                    position: fixed; /* Change from absolute to fixed */
+                    background-color: #f9f9f9;
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                    z-index: 10;
+                    top: 35px;
+                    right: 30px;
+                    border-radius: 10px;
+                }
+
+                .menu2 a {
+                    padding: 5px;
+                    display: block;
+                    text-decoration: none;
+                    color: #333;
+                }
+                .skill-item{
+                    font-size: 18px;
+                }
+                .exp-content{
+                    text-align: left;
+
+                }
+            }
     </style>
   </head>
   <body>
@@ -144,12 +188,25 @@
         <div class="header-container">
             <a class="notion-link" href="#aboutme-section">Nikunj Pradhan</a>
             <div class="horizontal-container">
-                <a class="notion-link" href="#aboutme-section">About Me</a>
-                <a class="notion-link" href="#skills-section">Skills</a>
-                <a class="notion-link" href="#experience-section">Experience</a>
-                <a class="notion-link" href="#projects-section">Projects</a>
-                <h1 class="text-clickable" onclick="toggleMenu()">Contact</h1>
-                <div class="menu" id="menu">
+                <div class="item-container">
+                    <a class="notion-link" href="#aboutme-section">About Me</a>
+                    <a class="notion-link" href="#skills-section">Skills</a>
+                    <a class="notion-link" href="#experience-section">Experience</a>
+                    <a class="notion-link" href="#projects-section">Projects</a>
+                </div>
+                <div class="menu-container">
+                    <h1 class="text-clickable" onclick="toggleMenu2()">Menu</h1>
+                    <div class="menu2" id="menu2">
+                        <a class="notion-link" href="#aboutme-section">About Me</a>
+                        <a class="notion-link" href="#skills-section">Skills</a>
+                        <a class="notion-link" href="#experience-section">Experience</a>
+                        <a class="notion-link" href="#projects-section">Projects</a>
+                    </div>
+                </div>
+
+
+                <h1 class="text-clickable" onclick="toggleMenu1()">Contact</h1>
+                <div class="menu1" id="menu1">
                 <a href="mailto:nikunj.pradhan31@gmail.com">Email</a>
                 <a href="https://github.com/nikunjpradhan31" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/in/nikunj-pradhan/" target="_blank">LinkedIn</a>
