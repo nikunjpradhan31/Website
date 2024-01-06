@@ -134,6 +134,7 @@
         .exp-content {
             font-size: 16px;
             color: #fff3f3;
+            text-align: left;
             }
 
         .menu-container{
@@ -175,10 +176,6 @@
                 }
                 .skill-item{
                     font-size: 18px;
-                }
-                .exp-content{
-                    text-align: left;
-
                 }
             }
     </style>
@@ -281,8 +278,16 @@
       });
     });
 
-    function toggleMenu() {
-      var menu = document.getElementById("menu");
+    function toggleMenu1() {
+      var menu = document.getElementById("menu1");
       menu.style.display = (menu.style.display === "block") ? "none" : "block";
+      document.getElementById("menu2").style.display = "none";
+
+    }
+    function toggleMenu2() {
+      var menu = document.getElementById("menu2");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+      document.getElementById("menu1").style.display = "none";
+
     }
   </script>
