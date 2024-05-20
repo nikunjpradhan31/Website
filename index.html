@@ -8,7 +8,6 @@
         p{
             font-size: 20px;
              line-height: 1.5;
-             max-width: 80%;
              text-align: center;
         }
         body {
@@ -176,13 +175,8 @@
             border-radius: 30px; /* Rounded corners */
             box-shadow: 0 10px 2px rgba(0, 0, 0, 0.1);
             margin-bottom: 5%; /* Add margin between each .exp-container */
+            align-items: center;
 
-        }
-
-        .pro-text-and-image {
-            display: grid;
-            grid-template-columns: auto 1fr; /* The first column (image) takes up the space it needs, the second column (text) takes up the remaining space */
-            align-items: center; /* Align items at the start of the container */
         }
 
         .pro-title {
@@ -193,11 +187,6 @@
             color: #fff3f3;
         }
 
-        .pro-content {
-            font-size: 120%;
-            color: #fff3f3;
-            grid-column:2;
-        }
         .pro-image {
             border-radius: 15%; /* Maintain your desired border radius */
             grid-column:1;
@@ -206,9 +195,22 @@
             flex: 0 0 auto; /* Prevent the link from growing or shrinking */
             border-radius: 15%; /* Maintain your desired border radius for the image */
             overflow: hidden; /* Ensures the border radius clips the image */
+            align-items: center;
+        }
+       .project-contain {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            text-align: center; 
         }
 
-
+        .project-containers {
+            flex: 1; 
+            color: #fff3f3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } 
         .menu-container{
                 display: none;
             }
@@ -218,8 +220,8 @@
             }
             @media only screen and (max-width: 1000px) {
                 .section {
-                    padding-left: 15px;
-                    padding-right: 15px;
+                    padding-left: 2%;
+                    padding-right: 2%;
                     padding-top: 60px;
                     text-align: center;
                 }
@@ -251,8 +253,23 @@
                 }
                 .exp-content{
                     text-align: left;
-
                 }
+                .project-contain {
+            display: flex;
+            justify-content: center; 
+            flex-direction: column;
+
+            align-items: center;
+            text-align: center; 
+        }
+
+        .project-containers {
+            flex: 1; 
+            color: #fff3f3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } 
             }
     </style>
   </head>
@@ -299,7 +316,7 @@
 
       <div class="list-contain">
         <div class="list-containo">
-            <h4 style = "font-size: 25px; text-align: left;">Languages and Tools I Enjoy:</h4>
+            <h4 style = "font-size: 25px; text-align: center;">Languages and Tools I Enjoy:</h4>
             <ul style="font-size: 20px; line-height: 1.5;">
                 <li>Python</li>
                 <li>C++</li>
@@ -308,7 +325,7 @@
             </ul>
         </div>
         <div class="list-containo">
-            <h4 style = "font-size: 25px; text-align: left;">Things I Want to Explore:</h4>
+            <h4 style = "font-size: 25px; text-align: center;">Things I Want to Explore:</h4>
             <ul style="font-size: 20px; line-height: 1.5;">
                 <li>Back-End Developement </li>
                 <li>Network Security</li>
@@ -376,13 +393,14 @@
 
         <div class="pro-container" style = "background-color: #601cff;">
             <div class="pro-title">Basic Matrix Calculator</div>
-            <div class="pro-content">
-                <div class="pro-text-and-image">
-                <a href="https://github.com/nikunjpradhan31/LinearAlgebraCalculator" target="_blank" class="pro-image-link">
-                <img src="\pictures\matrix.png" alt="Additional Projects Image" class="pro-image"></a>
-                <ul>
-                    <p>A basic matrix calculator that performs normal operations in addition to Gauss Jordan Elimination using Python's Num.py and Sci.py libraries.</p>
-                </ul>
+            <div class="project-contain">
+                <div class = "project-containers">
+                    <a href="https://github.com/nikunjpradhan31/LinearAlgebraCalculator" target="_blank" class="pro-image-link">
+                    <img src="\pictures\matrix.png" alt="Additional Projects Image" class="pro-image"></a>
+                </div>
+                <div class = "project-containers">
+                <p>A basic matrix calculator that performs normal operations in addition to Gauss Jordan Elimination using Python's Num.py and Sci.py libraries.</p>
+                </div>
             </div>
         </div>
         </div>
