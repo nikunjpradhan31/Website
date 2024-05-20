@@ -5,10 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        p{
+            font-size: 20px;
+             line-height: 1.5;
+             max-width: 80%;
+             text-align: center;
+        }
         body {
             background-color: #eaefd9;
             margin: 0;
-            padding: 5px;
+            padding: 0%;
             font-family: Monaco, monospace;
             color: #494949;
             scroll-behavior: smooth; /* Enable smooth scrolling */
@@ -27,20 +33,20 @@
 
         img{
             align-items:center;
-            max-width: 200px;
-            max-height: 200px;
-            min-width: 20px;
-            min-height: 20px;
+            max-width: 100%;
+            max-height: 100%;
+            min-width: 20%;
+            min-height: 20%;
         }
         .round{
             border-radius: 50%; /* Optional: Make the image round */
 
         }
         .section {
-            padding-left: 400px;
-            padding-right: 400px;
-            padding-top: 100px; /* Adjusted padding for the body content to accommodate the fixed navbar */
-            padding-bottom: 25px;
+            padding-left: 15%;
+            padding-right: 15%;
+            padding-top: 10%; /* Adjusted padding for the body content to accommodate the fixed navbar */
+            padding-bottom: 10%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -105,67 +111,90 @@
             text-decoration: underline;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 3fr);
-            gap: 30px;
+        .skills-container {
+    max-width: 80%; 
+    height: 200%;
+    padding: 3%; /* Adjusted padding for extra width on both sides */
+    border-radius: 30px; /* Rounded corners */
+    background-color: #58b386; /* Green background for the container */
+    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5%; /* Add margin between each .exp-container */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Changed 3fr to 1fr to divide the space evenly */
+   /* gap: 10%; /* Gap between grid items */
+    width: 100%; /* Ensure the grid takes up the full width of the container */
+}
+
+.skill-item {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+    border: none;
+    color: #fff3f3;
+
+    font-size: 140%;
+}
+
+.list-contain {
+            display: flex;
+            justify-content: space-between; /* Ensures space between the lists */
+            align-items: flex-start; /* Align items to the start of the container */
+            gap: 20%; /* Adjust the gap between the lists as needed */
+        }
+        .list-containo {
+            flex: 1; /* Ensure the lists take up equal space */
         }
 
-        .skill-item {
-            padding-top: 20px;
-            text-align: center;
-            border:  none;
-            font-size: 20px;
-
-        }
         .exp-container {
-            max-width: 600px; /* 400px + 25px (left) + 25px (right) */
-            padding: 40px 25px; /* Adjusted padding for extra width on both sides */
+            max-width: 80%; 
+            padding: 3% 3%; /* Adjusted padding for extra width on both sides */
+            border-radius: 30px; /* Rounded corners */
             background-color: #3ba1ee; /* Blue background for the container */
-            border-radius: 15px; /* Rounded corners */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-            margin-bottom: 25px; /* Add margin between each .exp-container */
+            box-shadow: 0 10px 2px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5%; /* Add margin between each .exp-container */
         }
 
         .exp-title {
-            font-size: 20px;
+            font-size: 120%;
             font-weight: bold;
             color: #fff3f3;
-            margin-bottom: 25px; /* Adjusted margin-bottom for spacing */
+            margin-bottom: 5%; /* Adjusted margin-bottom for spacing */
             }
 
         .exp-content {
-            font-size: 16px;
+            font-size: 110%;
             color: #fff3f3;
             }
 
             .pro-container {
-                max-width: 600px; /* 400px + 25px (left) + 25px (right) */
-            padding: 40px 25px; /* Adjusted padding for extra width on both sides */
+            max-width: 60%; /* 400px + 25px (left) + 25px (right) */
+            padding: 3% 3%; /* Adjusted padding for extra width on both sides */
             background-color: #3ba1ee; /* Blue background for the container */
-            border-radius: 15px; /* Rounded corners */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-            margin-bottom: 25px; /* Add margin between each .exp-container */
+            border-radius: 30px; /* Rounded corners */
+            box-shadow: 0 10px 2px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5%; /* Add margin between each .exp-container */
 
         }
 
         .pro-text-and-image {
-
             display: grid;
             grid-template-columns: auto 1fr; /* The first column (image) takes up the space it needs, the second column (text) takes up the remaining space */
             align-items: center; /* Align items at the start of the container */
         }
 
         .pro-title {
-            font-size: 20px;
+            font-size: 150%;
             font-weight: bold;
-            margin-bottom: 10px; /* Space below the title */
+            margin-bottom: 5%; /* Space below the title */
             text-align: center;
             color: #fff3f3;
         }
 
         .pro-content {
-            font-size: 18px;
+            font-size: 120%;
             color: #fff3f3;
             grid-column:2;
         }
@@ -259,13 +288,43 @@
         </div>
     </div>
     <div class="section" id="aboutme-section">
-            <img class = "round" src="pictures/pfp3.png" alt="Nikunj Pradhan">
-      <h4 style = "font-size: 30px;">Hello, My name is Nikunj...</h4>
-      <p style = "font-size: 20px">I'm a sophomore in Computer Science at Missouri S&T. Proficient in a variety programming languages and well-versed in computer networking and hardware, I bring an optimistic and determined mindset to every project. I enjoy problem-solving and the thrill of designing. I am currently working as Software Developer at a research lab in Missouri S&T.</p>
+            <img class = "round" src="pictures\pfp3.png" alt="Nikunj Pradhan">
+      <h4 style = "font-size: 30px;">Hey, I'm Nikunj...</h4>
+      <p>
+        I'm a sophomore in Computer Science at Missouri S&T and I am currently working as a Software Developer
+        at a research lab. My goal is to become an experienced &lt;FULL STACK&gt; web developer.
+      </p>
+      <p>Instead of summarizing who I am, here is a list of things I am interested in.</p>
+
+
+      <div class="list-contain">
+        <div class="list-containo">
+            <h4 style = "font-size: 25px; text-align: left;">Languages and Tools I Enjoy:</h4>
+            <ul style="font-size: 20px; line-height: 1.5;">
+                <li>Python</li>
+                <li>C++</li>
+                <li>Node.js</li>
+                <li>React</li>
+            </ul>
+        </div>
+        <div class="list-containo">
+            <h4 style = "font-size: 25px; text-align: left;">Things I Want to Explore:</h4>
+            <ul style="font-size: 20px; line-height: 1.5;">
+                <li>Back-End Developement </li>
+                <li>Network Security</li>
+                <li>Object Detection</li>
+                <li>Data Mining</li>
+            </ul>
+        </div>
     </div>
+
+
+    </div>
+
     <div class="section" id="skills-section">
-        <img  class = "round" src="pictures/skills.png" alt="Skills Image">
-        <h4 style = "font-size: 30px;">Skills</h4>
+        <img  class = "round" src="pictures\skills.png" alt="Skills Image">
+        <h4 style = "font-size: 30px;padding-bottom: 5%">Skills</h4>
+        <div class = "skills-container">
         <div class="skills-grid">
             <div class="skill-item">Python</div>
             <div class="skill-item">C++</div>
@@ -279,16 +338,13 @@
             <div class="skill-item">SQL / MySQL / SQLite</div>
             <div class="skill-item">AWS</div>
             <div class="skill-item">Node.js / Vue.js</div>
-
-
-
-
-
         </div>
     </div>
+    </div>
+
     <div class="section" id="experience-section">
-        <img class = "round" src="pictures/experience.png" alt="Experience Image">
-        <h4 style = "font-size: 30px;">Experience</h4>
+        <img class = "round" src="pictures\experience.png" alt="Experience Image">
+        <h4 style = "font-size: 30px;padding-bottom: 5%">Experience</h4>
         <div class="exp-container">
             <div class="exp-title">Software Developer | Missouri S&T</div>
             <div class="exp-content">
@@ -301,7 +357,7 @@
             </div>
 
         </div>
-        <div class="exp-container" style = "background-color: #65ba72;">
+        <div class="exp-container" style = "background-color: #e06b6b;">
             <div class="exp-title">Math & Reading Instructor | Kumon Learning Center</div>
             <div class="exp-content">
               <ul>
@@ -315,17 +371,17 @@
     </div>
 
     <div class="section" id="projects-section">
-        <img class = "round" src="pictures/projects.png" alt="Projects Image">
-        <h4 style = "font-size: 30px;">Projects</h4>
+        <img class = "round" src="pictures\projects.png" alt="Projects Image">
+        <h4 style = "font-size: 30px; padding-bottom: 5%;">Projects</h4>
 
-        <div class="exp-container" style = "background-color: #601cff;">
+        <div class="pro-container" style = "background-color: #601cff;">
             <div class="pro-title">Basic Matrix Calculator</div>
             <div class="pro-content">
                 <div class="pro-text-and-image">
                 <a href="https://github.com/nikunjpradhan31/LinearAlgebraCalculator" target="_blank" class="pro-image-link">
-                <img src="pictures/matrix.png" alt="Additional Projects Image" class="pro-image"></a>
+                <img src="\pictures\matrix.png" alt="Additional Projects Image" class="pro-image"></a>
                 <ul>
-                    <p>A basic matrix calculator that performs normal operations such as addition and multiplication to Gauss-Jordan Elimination using Python's Num.py and Sci.py libraries.</p>
+                    <p>A basic matrix calculator that performs normal operations in addition to Gauss Jordan Elimination using Python's Num.py and Sci.py libraries.</p>
                 </ul>
             </div>
         </div>
