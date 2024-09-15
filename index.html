@@ -4,26 +4,46 @@
     <title>Nikunj Pradhan</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
     <style>
         p{
             font-size: 20px;
              line-height: 1.5;
              text-align: center;
+             color: #fff3f3;
+
         }
         body {
-            background-color: #eaefd9;
+            background-image: radial-gradient(ellipse farthest-corner at 2em 2em , #FF9E9D, #FF9E9D 50%, #FF3D7F 50%);
+            background-size: 6rem 6rem; 
             margin: 0;
             padding: 0%;
-            font-family: Monaco, monospace;
-            color: #494949;
+            font-family: "Roboto Mono", monospace;
+            font-weight: 400;
             scroll-behavior: smooth; /* Enable smooth scrolling */
             overflow-x: hidden;
+            color: #fff3f3;
 
         }
 
-        .navbar {
-            overflow: hidden;
-            background-color: #eaefd9;
+        .innerbody {
+            background-color: #FF3D7F; 
+            border: 10px solid #FF9E9D;
+            border-radius: 15px; 
+            margin-top: 5%;
+            margin-bottom: 10%; 
+            max-width: 80%; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+         .navbar {
+            background-color: rgba(255, 61, 127, 0.5);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             position: fixed;
             top: 0;
             width: 100%;
@@ -42,8 +62,6 @@
 
         }
         .section {
-            padding-left: 15%;
-            padding-right: 15%;
             padding-top: 5%; /* Adjusted padding for the body content to accommodate the fixed navbar */
             padding-bottom: 10%;
             display: flex;
@@ -58,12 +76,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px;
-            background-color: #eaefd9;
         }
 
         .header-container a {
             text-decoration: none;
-            color: #494949; /* Set the color to something other than the default link color */
+            color: #f3f3f3; /* Set the color to something other than the default link color */
             margin: 0 10px; /* Optional: Add space between links */
             font-weight: bold; /* Optional: Make the links bold */
             font-size: 16px; /* Optional: Adjust the font size */
@@ -71,7 +88,7 @@
 
         .header-container h1 {
             text-decoration: none;
-            color: #494949; /* Set the color to something other than the default link color */
+            color: #f3f3f3; /* Set the color to something other than the default link color */
             margin: 0 10px; /* Optional: Add space between links */
             font-weight: bold; /* Optional: Make the links bold */
             font-size: 16px; /* Optional: Adjust the font size */
@@ -88,11 +105,11 @@
         }
 
         .menu1 {
-            display: none;
+            display:none;
             position: fixed; /* Change from absolute to fixed */
             background-color: #f9f9f9;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            z-index: 10;
+            z-index: 1000;
             top: 35px;
             right: -10px;
             border-radius: 10px;
@@ -123,7 +140,7 @@
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Changed 3fr to 1fr to divide the space evenly */
-   /* gap: 10%; /* Gap between grid items */
+    gap: 5%; /* Gap between grid items */
     width: 100%; /* Ensure the grid takes up the full width of the container */
 }
 
@@ -282,6 +299,7 @@
     </style>
   </head>
   <body>
+
     <div class="navbar">
         <div class="header-container">
             <a class="notion-link" href="#aboutme-section">Nikunj Pradhan</a>
@@ -312,6 +330,8 @@
             </div>
         </div>
     </div>
+    <div class="innerbody">
+
     <div class="section" id="aboutme-section">
             <img class = "round" src="pictures\pfp3.png" alt="Nikunj Pradhan">
       <h4 style = "font-size: 30px;">Hey, I'm Nikunj...</h4>
@@ -430,8 +450,6 @@
         </div>
 
         </div>
-
-
     </div>
     </body>
 </html>
