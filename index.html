@@ -69,6 +69,7 @@
             align-items: center;
             text-align: justify;
             text-justify: inter-word;
+            box-sizing: border-box;
         }
 
         .header-container {
@@ -129,18 +130,18 @@
 
         .skills-container {
     max-width: 80%; 
-    height: 200%;
     padding: 3%; /* Adjusted padding for extra width on both sides */
     border-radius: 30px; /* Rounded corners */
     background-color: #58b386; /* Green background for the container */
     box-shadow: 0 10px 2px rgba(0, 0, 0, 0.1);
     margin-bottom: 5%; /* Add margin between each .exp-container */
+    /* overflow: hidden; */
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Changed 3fr to 1fr to divide the space evenly */
-    gap: 5%; /* Gap between grid items */
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Changed 3fr to 1fr to divide the space evenly */
     width: 100%; /* Ensure the grid takes up the full width of the container */
 }
 
@@ -151,7 +152,6 @@
     border: none;
     color: #fff3f3;
 
-    font-size: 140%;
 }
 
 .list-contain {
@@ -159,9 +159,15 @@
             justify-content: space-between; /* Ensures space between the lists */
             align-items: flex-start; /* Align items to the start of the container */
             gap: 20%; /* Adjust the gap between the lists as needed */
+            box-sizing: border-box;
+            max-width: 100%; /* Ensure the list does not overflow the container */
+            flex-wrap: wrap;
+
         }
         .list-containo {
             flex: 1; /* Ensure the lists take up equal space */
+            box-sizing: border-box;
+
         }
 
         /* .exp-container {
