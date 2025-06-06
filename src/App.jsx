@@ -245,7 +245,7 @@ const App = () => {
                 </div>
               </div>
             </div> */}
-<img src="nikunj_pfp.jpg" alt="Nikunj Pradhan" class="rounded-full object-cover scale-[0.8]" />
+<img src="src/assets/nikunj_pfp.jpg" alt="Nikunj Pradhan" class="rounded-full object-cover scale-[0.8]" />
 </div>
         </div>
       </section>
