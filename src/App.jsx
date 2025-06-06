@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, Menu, X, ArrowUp, ChevronRight } from 'lucide-react';
+import nikunjPfp from './assets/nikunj_pfp.jpg';
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -245,7 +246,7 @@ const App = () => {
                 </div>
               </div>
             </div> */}
-<img src="src/assets/nikunj_pfp.jpg" alt="Nikunj Pradhan" class="rounded-full object-cover scale-[0.8]" />
+<img src={nikunjPfp} alt="Nikunj Pradhan" class="rounded-full object-cover scale-[0.8]" />
 </div>
         </div>
       </section>
