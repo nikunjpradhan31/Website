@@ -51,43 +51,122 @@ const App = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const skillCategories = {
-    Languages: ["Python", "C++", "JavaScript", "TypeScript", "MATLAB"],
-    Frameworks: ["FastAPI","React.js", "Node.js", "Express.js", "Flask"],
-    Databases: ["PostgreSQL", "Microsoft SQL","MongoDB", "MySQL", "FireBase"],
-    Tools: ["Docker", "Git", "Linux", "AWS",'S3','Azure'],
-    Libraries: ['NumPy', 'SciPy', 'Scikit-Image', 'Pandas', 'OpenCV', 'Socket.IO', 'WebRTC', 'SQLalchemy'],
-    ML: ["Pytorch","Scikit-Learn" ,"CUDA", "ONNX", "Super-Gradients","Lightning"]
-  };
+const skillCategories = {
+  Languages: [
+    "Python",  
+    "JavaScript", 
+    "C++",
+    "TypeScript", 
+    "MATLAB", 
+    "Java", 
+    "Bash", 
+    "HTML/CSS", 
+  ],
+  Frameworks: [
+    "FastAPI",
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "PyTorch Lightning"
+  ],
+  Databases: [
+    "PostgreSQL", 
+    "Microsoft SQL", 
+    "MongoDB", 
+    "MySQL", 
+    "Firebase", 
+    "DynamoDB",  
+    "MinIO"      
+  ],
+  Tools: [
+    "Docker", 
+    "Git", 
+    "Linux", 
+    "AWS",
+    "S3",
+    "Azure",
+    "EC2",
+    "Kubernetes",
+    "NGINX",
+    "WebSockets"
+  ],
+  Libraries: [
+    "NumPy", 
+    "SciPy", 
+    "Pandas", 
+    "OpenCV", 
+    "Socket.IO", 
+    "WebRTC", 
+    "SQLalchemy",
+    "Scikit-learn"
+  ],
+  ML: [
+    "PyTorch", 
+    "Scikit-Learn",
+    "CUDA", 
+    "ONNX", 
+    "SuperGradients", 
+    "Lightning", 
+    "YOLO-NAS", 
+    "YOLOv9",
+    "Object Detection & Classification",
+    "Collaborative Filtering",          
+    "Content-Based Filtering"            
+  ]
+};
+
 
   const projects = [
+{
+  title: "HimalayanHut",
+  description: "Full-stack movie watchlist and recommendation app built with FastAPI, React, PostgreSQL, and MinIO. Users can create, track, rate, and share watchlists while receiving personalized recommendations using content- and collaborative-based filtering. Features secure email-based 2FA login and is self-hosted on Ubuntu with Docker Compose and NGINX for deployment and media management.",
+  tech: ["React", "Tailwind CSS", "FastAPI", "PostgreSQL", "MinIO", "Scikit-learn", "Python", "Docker Compose", "NGINX", "Ubuntu VM"],
+  github: "https://github.com/nikunjpradhan31/TheHimalayanHut",
+  live: "https://www.himalayanhut.xyz",
+  status: "Deployed"
+},
+
+
+     {
+    "title": "VaultKeeper",
+    "description": "Self-hosted secure file server built with C++ and Docker as an open-source alternative to cloud storage services. Features end-to-end encryption, JWT authentication, role-based access control, and real-time file synchronization. Includes advanced search capabilities, versioning, and collaborative editing with WebSocket-based live updates for teams and households seeking complete data privacy.",
+    "tech": ["C++", "CMake", "Docker", "PostgreSQL", "OpenSSL", "JWT", "WebSocket", "SQLite", "CivetWeb", "NGINX"],
+    "github": "https://github.com/username/VaultKeeper",
+    "live": null,
+    "status": "In Progress"
+  },
+  {
+    "title": "YAMLScraper",
+    "description": "Modular web scraping framework powered by YAML configuration files, enabling non-programmers to define complex scraping workflows without code changes. Features asynchronous execution, session management, pagination support, and multi-format outputs. Includes proxy rotation, rate limiting, and dynamic content support with Playwright integration for JavaScript-heavy sites.",
+    "tech": ["Python", "PyYAML", "aiohttp", "BeautifulSoup4", "Playwright", "pandas", "SQLite", "Rich CLI"],
+    "github": "https://github.com/username/YAMLScraper",
+    "live": null,
+    "status": "In Progress"
+  },
+  {
+    "title": "DevanagariVision",
+    "description": "Advanced Nepali Devanagari OCR and NLP processing pipeline that extracts and processes text from scanned documents and images. Features character detection, Unicode conversion, Romanization, part-of-speech tagging, and named entity recognition. Includes web interface for document upload, batch PDF processing, and search functionality with translation integration.",
+    "tech": ["Python", "Pytorch", "OpenCV", , "FastAPI", "React", "PostgreSQL", "Docker", "NLTK", "Tesseract"],
+    "github": "https://github.com/username/DevanagariVision",
+    "live": null,
+    "status": "In Progress"
+  },
     {
-      title: "HimalayanHut",
-      description: "Movie watchlist application allowing users to store, rate, and recommend movies. Features personalized recommendations using regression machine learning models. Users can discover trending movies and create custom watchlists based on preferences and behavior patterns.",
-      tech: ["React", "React Bootstrap", "Tailwind CSS", "FastAPI", "PostgreSQL", "scikit-learn", "Python", "MinIO"],
-      github: "https://github.com/nikunjpradhan31/HimalayanHut", // Replace with actual URL if different
-      status: "Almost Deployed"
-    },
-    {
-      title: "Devanagari Vision",
-      description: "A computer vision pipeline that detects, classifies, and translates Nepali Devanagari script from images into English. Utilizes YOLOv9 for object detection, a custom OCR model in PyTorch exported with ONNX, and a translation layer for converting recognized text using NLP techniques. Trained on a custom-labeled subset of the COCO dataset adapted for Devanagari characters.",
-      tech: ["Python", "PyTorch", "ONNX", "YOLOv9", "COCO Dataset", "NLP"],
-      github: "https://github.com/nikunjpradhan31/DevanagariVision", // Replace with actual URL if different
-      status: "In Progress"
-    },
+  title: "RhinoChat",
+  description: "Real-time, secure, and seamless chat application designed for fast and reliable communication. Built with React, Node.js, MongoDB, and Socket.IO, Rhino supports one-on-one chats, group conversations, and file sharing of any size. It includes instant messaging with minimal latency, secure authentication, persistent chat history stored in MongoDB, group chat support, seamless file sharing with GridFS, and a fully responsive mobile-first interface for desktops, tablets, and smartphones.",
+  tech: ["React", "JavaScript", "Node.js", "Express.js", "MongoDB", "Socket.IO", "WebRTC", "GridFS"],
+  github: "https://github.com/nikunjpradhan31/Rhino",
+  status: "Complete"
+},
+
     {
       title: "Triaxial Shear Test Analyzer",
       description: "MATLAB-based application for analyzing triaxial shear test data from image or video input. Uses blob analysis and computer vision to track compression deformation. Includes manual annotation tools in App Designer to refine model predictions. Applies watershed segmentation, edge detection, and k-nearest neighbor search to estimate and reconstruct missing data points. Outputs a 3D model of the shear test for research and visualization.",
       tech: ["MATLAB", "App Designer", "MATLAB Deep Learning Toolbox", "Computer Vision"],
       status: "Complete"
     },
-    {
-      title: "RhinoChat",
-      description: "Real-time chat application with WebRTC, Socket.IO, and MongoDB. Features secure authentication, group chats, and file sharing with GridFS.",
-      tech: ["JavaScript", "React", "MongoDB", "Socket.IO", "WebRTC"],
-      github: "https://github.com/nikunjpradhan31/Rhino",
-      status: "Complete"
-    },
+
+
     {
       title: "Matrix Calculator",
       description: "Advanced matrix operations including Gauss-Jordan elimination using NumPy and SciPy for linear algebra computations.",
@@ -100,29 +179,44 @@ const App = () => {
     
   ];
 
-  const experiences = [
+const experiences = [
+  {
+    title: "Data Science Co-Op",
+    company: "Hunter Engineering Company",
+    period: "January 2025 – August 2025",
+    achievements: [
+      "Increased machine learning model accuracy from 32% to 84% by optimizing hyperparameters, implementing active learning strategies, and applying selective data clustering heuristics",
+      "Reduced model training time from 6 hours to 2 hours by transitioning from SuperGradients to a custom PyTorch Lightning framework integrated with DDP using YOLOV9 architecture",
+      "Developed and deployed two full-stack web applications using FastAPI, React, Microsoft SQL Server, and AWS S3 to support internal data pipelines, model performance dashboards, and data annotation workflows for cross-team insights and decision-making",
+      "Built a novel image preprocessing model to perform geometric perspective correction using OpenCV and PyTorch, improving downstream detection and classification accuracy by 35% using YOLO-NAS architecture",
+      "Designed Python command-line tools for automated benchmarking of model performance across AWS and Azure pipelines, enabling comparisons between internal models and third-party alternatives to inform deployment and accuracy assessment"
+    ]
+  },
+  {
+    title: "Backend Engineer",
+    company: "Tally Receipts",
+    period: "June 2025 – Present",
+    achievements: [
+      "Migrated backend from MongoDB to AWS DynamoDB, redesigning schemas with Partition Keys, Global Secondary Indexes (GSIs), and TTL to support efficient querying and data lifecycle",
+      "Refactored Node.js + Express.js services to integrate with DynamoDB; used AWS Lambda, Amplify, and IAM for backend logic and infrastructure management",
+      "Implemented S3 file upload flows with pre-signed URLs and collaborated with the React Native frontend to maintain API compatibility post-migration",
+      "Designed and implemented prompt templates to embed calendar event context for receipt categorization models, leveraging OAuth2-secured Google and Microsoft Calendar APIs to retrieve and normalize event data within a ±2-hour window"
+    ]
+  },
     {
-      title: "Software Developer",
-      company: "Missouri S&T",
-      period: "2023 - 2024",
-      achievements: [
-        "Engineered MATLAB 3D simulation system for triaxial shear tests",
-        "Improved blob analysis accuracy by 62% using deep learning optimization",
-        "Implemented computer vision with watershed method for object detection",
-        "Developed 3D model triangulation using ray tracing algorithms"
-      ]
-    },
-    {
-      title: "Math & Reading Instructor",
-      company: "Kumon Learning Center",
-      period: "2022 - 2023",
-      achievements: [
-        "Instructed 100+ students in mathematics and English",
-        "Developed personalized learning strategies for ages 10-17",
-        "Tracked and recorded student progress to understand and evaluate growth throughout the program",
-      ]
-    }
-  ];
+    title: "Software Developer",
+    company: "Missouri University of Science and Technology",
+    period: "August 2023 – December 2024",
+    achievements: [
+      "Engineered a MATLAB application for 3D simulation of triaxial shear tests, integrating deep learning and parallel computing for accurate soil compression analysis",
+      "Achieved a 62% improvement in the accuracy of blob analysis by optimizing the deep learning model and fine-tuning parameters in collaboration with fellow researchers",
+      "Partnered closely with my research team in weekly meetings to tailor application features and optimize performance, ensuring alignment with project goals and continuous improvement",
+      "Utilized advanced computer vision techniques, including the watershed method for enhanced object detection, and developed a program to triangulate 3D models using ray tracing"
+    ]
+  },
+];
+
+
 
   return (
     <div className="min-h-screen bg-black text-gray-300 font-mono">
@@ -418,7 +512,7 @@ const App = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center items-center space-x-4 mb-4">
             <Terminal className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
-            <span className="text-gray-400 text-sm sm:text-base">© 2024 Nikunj Pradhan</span>
+            <span className="text-gray-400 text-sm sm:text-base">© 2025 Nikunj Pradhan</span>
           </div>
           <p className="text-gray-500 text-xs sm:text-sm">
             Built with React, Tailwind CSS, and lots of momo 🥟
