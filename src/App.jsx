@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, Menu, X, ArrowUp, ChevronRight } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, Menu, X, ArrowUp, ChevronRight, Download} from 'lucide-react';
 import nikunjPfp from './assets/nikunj_pfp.jpg';
+import dataScience from './assets/Nikunj_Pradhan_Data_Resume_9_27_2025.pdf';
+import SWE from './assets/Nikunj_Pradhan_SWE_Resume_9_28_2025.pdf';
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,107 +55,120 @@ const App = () => {
 
 const skillCategories = {
   Languages: [
-    "Python",  
-    "JavaScript", 
+    "Python",
     "C++",
-    "TypeScript", 
-    "MATLAB", 
-    "Java", 
-    "Bash", 
-    "HTML/CSS", 
+    "JavaScript",
+    "TypeScript",
+    "Java",
+    "MATLAB",
+    "SQL",
+    "Bash",
+    "HTML/CSS"
   ],
   Frameworks: [
     "FastAPI",
     "React.js",
     "Node.js",
     "Express.js",
-    "PyTorch Lightning"
+    "PyTorch Lightning",
+    "Crow",
+    "Django"
   ],
   Databases: [
-    "PostgreSQL", 
-    "Microsoft SQL", 
-    "MongoDB", 
-    "MySQL", 
-    "Firebase", 
-    "DynamoDB",  
-    "MinIO"      
+    "PostgreSQL",
+    "Microsoft SQL Server",
+    "MongoDB",
+    "Firebase",
+    "DynamoDB",
+    "MinIO",
+    "Mongoose"
   ],
   Tools: [
-    "Docker", 
-    "Git", 
-    "Linux", 
-    "AWS",
-    "S3",
-    "Azure",
-    "EC2",
+    "Docker",
     "Kubernetes",
+    "Git",
+    "Linux/Ubuntu",
     "NGINX",
-    "WebSockets"
+    "WebSockets",
+    "CI/CD",
+    "AWS (S3, EC2, Lambda)",
+    "Azure ML"
   ],
   Libraries: [
-    "NumPy", 
-    "SciPy", 
-    "Pandas", 
-    "OpenCV", 
-    "Socket.IO", 
-    "WebRTC", 
-    "SQLalchemy",
-    "Scikit-learn"
+    "NumPy",
+    "SciPy",
+    "Pandas",
+    "Matplotlib",
+    "Jupyter",
+    "OpenCV",
+    "SQLAlchemy",
+    "Socket.IO",
+    "WebRTC"
   ],
   ML: [
-    "PyTorch", 
-    "Scikit-Learn",
-    "CUDA", 
-    "ONNX", 
-    "SuperGradients", 
-    "Lightning", 
-    "YOLO-NAS", 
-    "YOLOv9",
+    "PyTorch",
+    "Scikit-learn",
+    "ONNX",
+    "YOLO",
+    "SuperGradients",
+    "CNN/CRNN",
+    "Transformers",
     "Object Detection & Classification",
-    "Collaborative Filtering",          
-    "Content-Based Filtering"            
+    "Recommendation Systems",
+    "Regression"
   ]
 };
 
 
+
   const projects = [
 {
-  title: "HimalayanHut",
-  description: "Full-stack movie watchlist and recommendation app built with FastAPI, React, PostgreSQL, and MinIO. Users can create, track, rate, and share watchlists while receiving personalized recommendations using content- and collaborative-based filtering. Features secure email-based 2FA login and is self-hosted on Ubuntu with Docker Compose and NGINX for deployment and media management.",
-  tech: ["React", "Tailwind CSS", "FastAPI", "PostgreSQL", "MinIO", "Scikit-learn", "Python", "Docker Compose", "NGINX", "Ubuntu VM"],
+  title: "Himalayan Hut",
+  description: "Full-stack movie watchlist and recommendation app with personalized recommendations, secure 2FA login, and self-hosted deployment using Docker, NGINX, and Kubernetes.",
+  tech: ["React", "Tailwind CSS", "FastAPI", "PostgreSQL", "MinIO", "Scikit-learn", "Python", "Docker","Kubernetes", "NGINX"],
   github: "https://github.com/nikunjpradhan31/TheHimalayanHut",
   live: "https://www.himalayanhut.xyz",
   status: "Deployed"
 },
+  {
+    "title": "Nepali Devanagari OCR",
+    "description": "Built a Nepali OCR system with CRNN and transformer models, achieving 97% character-level and 92% paragraph-level accuracy. Collected/augmented 400+ images, evaluated with error metrics, and deployed via FastAPI for real-time and batch inference.",
+    "tech": ["Python", "Pytorch", "OpenCV", , "FastAPI", "React", "CRNN", "Transformer", "Jupyter"],
+    "github": "https://github.com/nikunjpradhan31/NepaliDevanagariVision",
+    "live": null,
+    "status": "In Progress"
+  },
 
 
      {
-    "title": "VaultKeeper",
-    "description": "Self-hosted secure file server built with C++ and Docker as an open-source alternative to cloud storage services. Features end-to-end encryption, JWT authentication, role-based access control, and real-time file synchronization. Includes advanced search capabilities, versioning, and collaborative editing with WebSocket-based live updates for teams and households seeking complete data privacy.",
-    "tech": ["C++", "CMake", "Docker", "PostgreSQL", "OpenSSL", "JWT", "WebSocket", "SQLite", "CivetWeb", "NGINX"],
+    "title": "Vault Keeper",
+    "description": "Open-source self-hosted file server with end-to-end encryption, JWT authentication, role-based access control, file versioning, and advanced search as a privacy-focused alternative to cloud storage.",
+    "tech": ["C++", "Crow", "Docker", "PostgreSQL", "OpenSSL", "JWT", "MinIO"],
     "github": "https://github.com/username/VaultKeeper",
     "live": null,
     "status": "In Progress"
   },
   {
-    "title": "YAMLScraper",
-    "description": "Modular web scraping framework powered by YAML configuration files, enabling non-programmers to define complex scraping workflows without code changes. Features asynchronous execution, session management, pagination support, and multi-format outputs. Includes proxy rotation, rate limiting, and dynamic content support with Playwright integration for JavaScript-heavy sites.",
-    "tech": ["Python", "PyYAML", "aiohttp", "BeautifulSoup4", "Playwright", "pandas", "SQLite", "Rich CLI"],
-    "github": "https://github.com/username/YAMLScraper",
+    "title": "YAML Scraper",
+    "description": "Modular web scraping framework with YAML-based configuration, enabling no-code workflow setup. Supports async execution, pagination, proxy rotation, rate limiting, and Playwright for dynamic content.",
+    "tech": ["Python", "YAML", "aiohttp", "BeautifulSoup4", "Playwright", "pandas", "SQLite", "Selenium"],
+    "github": "https://github.com/nikunjpradhan31/YAML-Web-Scrapper",
     "live": null,
     "status": "In Progress"
   },
+
   {
-    "title": "DevanagariVision",
-    "description": "Advanced Nepali Devanagari OCR and NLP processing pipeline that extracts and processes text from scanned documents and images. Features character detection, Unicode conversion, Romanization, part-of-speech tagging, and named entity recognition. Includes web interface for document upload, batch PDF processing, and search functionality with translation integration.",
-    "tech": ["Python", "Pytorch", "OpenCV", , "FastAPI", "React", "PostgreSQL", "Docker", "NLTK", "Tesseract"],
-    "github": "https://github.com/username/DevanagariVision",
-    "live": null,
-    "status": "In Progress"
-  },
+  "title": "Homelab",
+  "description": "Personal server setup running Ubuntu 22.04, featuring Caddy reverse proxy, PostgreSQL databases, NAS storage, and hosting multiple websites including this portfolio and HimalayanHut.",
+  "tech": ["Ubuntu 22.04", "Caddy", "PostgreSQL", "NAS Storage", "Docker", "NGINX", "Reverse Proxy", "Web Hosting"],
+  "github": null,
+  "live": null,
+  "status": "Active"
+},
+
     {
-  title: "RhinoChat",
-  description: "Real-time, secure, and seamless chat application designed for fast and reliable communication. Built with React, Node.js, MongoDB, and Socket.IO, Rhino supports one-on-one chats, group conversations, and file sharing of any size. It includes instant messaging with minimal latency, secure authentication, persistent chat history stored in MongoDB, group chat support, seamless file sharing with GridFS, and a fully responsive mobile-first interface for desktops, tablets, and smartphones.",
+  title: "Rhino Chat",
+  description:"Real-time chat app supporting secure one-on-one and group messaging, file sharing, persistent chat history, and a responsive mobile-first interface.",
   tech: ["React", "JavaScript", "Node.js", "Express.js", "MongoDB", "Socket.IO", "WebRTC", "GridFS"],
   github: "https://github.com/nikunjpradhan31/Rhino",
   status: "Complete"
@@ -161,8 +176,8 @@ const skillCategories = {
 
     {
       title: "Triaxial Shear Test Analyzer",
-      description: "MATLAB-based application for analyzing triaxial shear test data from image or video input. Uses blob analysis and computer vision to track compression deformation. Includes manual annotation tools in App Designer to refine model predictions. Applies watershed segmentation, edge detection, and k-nearest neighbor search to estimate and reconstruct missing data points. Outputs a 3D model of the shear test for research and visualization.",
-      tech: ["MATLAB", "App Designer", "MATLAB Deep Learning Toolbox", "Computer Vision"],
+      description: "MATLAB/C++ app for analyzing triaxial shear tests using CV techniques, blob analysis, and k-NN to track deformation and reconstruct missing data, generating 3D models for research and visualization.",
+      tech: ["C++","MATLAB", "App Designer", "MATLAB Deep Learning Toolbox", "Computer Vision", "Point Cloud", "OpenCV"],
       status: "Complete"
     },
 
@@ -185,34 +200,38 @@ const experiences = [
     company: "Hunter Engineering Company",
     period: "January 2025 – August 2025",
     achievements: [
-      "Increased machine learning model accuracy from 32% to 84% by optimizing hyperparameters, implementing active learning strategies, and applying selective data clustering heuristics",
-      "Reduced model training time from 6 hours to 2 hours by transitioning from SuperGradients to a custom PyTorch Lightning framework integrated with DDP using YOLOV9 architecture",
-      "Developed and deployed two full-stack web applications using FastAPI, React, Microsoft SQL Server, and AWS S3 to support internal data pipelines, model performance dashboards, and data annotation workflows for cross-team insights and decision-making",
-      "Built a novel image preprocessing model to perform geometric perspective correction using OpenCV and PyTorch, improving downstream detection and classification accuracy by 35% using YOLO-NAS architecture",
-      "Designed Python command-line tools for automated benchmarking of model performance across AWS and Azure pipelines, enabling comparisons between internal models and third-party alternatives to inform deployment and accuracy assessment"
-    ]
+  "Elevated deep learning model workflow accuracy from 32% to 84% through hyperparameter optimization, active learning, and selective data clustering, improving model reliability for diverse usage.",
+  "Delivered full-stack apps (FastAPI, React, SQL Server) production model dashboards, dataset analytical applications, and AI-assisted annotation.",
+  "Engineered geometric AI perspective-correction model, increasing classification accuracy by 35% and reducing manual data-cleaning effort.",
+  "Automated cross-cloud benchmarking pipelines across AWS and Azure, enabling direct performance comparisons of vendor AI/ML models to drive strategic evaluation and decision-making.",
+  "Accelerated distributed multi-GPU training workflows by 66% and development-to-production cycles through close collaboration with R&D teams.",
+]
+
   },
   {
     title: "Backend Engineer",
     company: "Tally Receipts",
     period: "June 2025 – Present",
-    achievements: [
-      "Migrated backend from MongoDB to AWS DynamoDB, redesigning schemas with Partition Keys, Global Secondary Indexes (GSIs), and TTL to support efficient querying and data lifecycle",
-      "Refactored Node.js + Express.js services to integrate with DynamoDB; used AWS Lambda, Amplify, and IAM for backend logic and infrastructure management",
-      "Implemented S3 file upload flows with pre-signed URLs and collaborated with the React Native frontend to maintain API compatibility post-migration",
-      "Designed and implemented prompt templates to embed calendar event context for receipt categorization models, leveraging OAuth2-secured Google and Microsoft Calendar APIs to retrieve and normalize event data within a ±2-hour window"
-    ]
+    achievements: 
+    [
+  "Redesigned and migrated backend from MongoDB to AWS DynamoDB, redesigning schemas for efficient querying, scalability, and data lifecycle management.",
+  "Integrated FidelSDK for secure card linking in the frontend, designed business logic for safe card tracking in the database, and implemented webhooks to collect user purchase receipts.",
+  "Refactored and modernized Node.js + Express.js services and integrated AWS Lambda, Amplify, and IAM, streamlining backend logic and infrastructure.",
+  "Built AI-powered receipt categorization service, reducing manual entry effort for users and integrating seamlessly with calendar workflows (Google, Microsoft).",
+        "Implemented S3 file upload flows with pre-signed URLs and collaborated with the React Native frontend to maintain API compatibility post-migration",
+
+]
   },
     {
-    title: "Software Developer",
+    title: "Computer Vision Researcher",
     company: "Missouri University of Science and Technology",
     period: "August 2023 – December 2024",
     achievements: [
-      "Engineered a MATLAB application for 3D simulation of triaxial shear tests, integrating deep learning and parallel computing for accurate soil compression analysis",
-      "Achieved a 62% improvement in the accuracy of blob analysis by optimizing the deep learning model and fine-tuning parameters in collaboration with fellow researchers",
-      "Partnered closely with my research team in weekly meetings to tailor application features and optimize performance, ensuring alignment with project goals and continuous improvement",
-      "Utilized advanced computer vision techniques, including the watershed method for enhanced object detection, and developed a program to triangulate 3D models using ray tracing"
-    ]
+  "Improved CV model accuracy by 62% through optimization, hyperparameter tuning, and algorithmic refinement using C++ OpenCV and Point Cloud.",
+  "Developed a MATLAB/C++ application simulating 3D triaxial shear tests with deep learning and parallel computing for soil compression modeling, incorporating advanced CV techniques like watershed segmentation and 3D model triangulation via ray tracing.",
+  "Collaborated with other research teams for development, code reviews, and future experimental planning."
+]
+
   },
 ];
 
@@ -310,7 +329,7 @@ const experiences = [
                 <span className="text-purple-500">Nikunj </span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-400 mb-6 sm:mb-8 leading-relaxed">
-              I'm a Junior in Computer Science at Missouri S&T and I am currently working as a Data Science Co-op at Hunter Engineering Company. My goal is to become an experienced Data Scientist or Systems Engineer.
+              I'm a Senior in Computer Science at Missouri S&T and I am currently working as a Data Science Co-op at Hunter Engineering Company. My goal is to become an experienced Data Scientist or Software Engineer.
               </p>
 
               <div className="flex space-x-4 sm:space-x-6">
@@ -326,7 +345,18 @@ const experiences = [
                    className="text-gray-500 hover:text-purple-500 transition-colors">
                   <Mail className="w-7 h-7 sm:w-8 sm:h-8" />
                 </a>
+                   <a href={SWE} target="_blank" rel="noopener noreferrer"
+       className="flex items-center text-gray-500 hover:text-purple-500 transition-colors space-x-2">
+      <span>SWE Resume</span>
+      <Download className="w-5 h-5 sm:w-5 sm:h-5" />
+    </a>
+    <a href={dataScience} target="_blank" rel="noopener noreferrer"
+       className="flex items-center text-gray-500 hover:text-purple-500 transition-colors space-x-2">
+      <span>Data Science Resume</span>
+      <Download className="w-5 h-5 sm:w-5 sm:h-5" />
+    </a>
               </div>
+
             </div>
 
             {/* Right side - Photo placeholder */}
@@ -342,6 +372,46 @@ const experiences = [
             </div> */}
 <img src={nikunjPfp} alt="Nikunj Pradhan" class="rounded-full object-cover scale-[0.8]" />
 </div>
+        </div>
+      </section>
+
+
+      {/* Experience Section */}
+      <section id="experience" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">
+              <span className="text-yellow-500">function</span> getExperience() {'{'}
+            </h2>
+          </div>
+          
+          <div className="space-y-8 sm:space-y-12">
+            {experiences.map((exp, index) => (
+              <div key={index} className="bg-gray-900 rounded-lg border border-yellow-500/20 p-6 sm:p-8 hover:border-yellow-500/40 transition-all">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-6">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{exp.title}</h3>
+                    <p className="text-yellow-500 text-base sm:text-lg">{exp.company}</p>
+                  </div>
+                  <div className="mt-2 lg:mt-0 lg:text-right">
+                    <p className="text-red-500 font-mono text-sm sm:text-base">{exp.period}</p>
+                  </div>
+                </div>
+                <div className="space-y-2 sm:space-y-3">
+                  {exp.achievements.map((achievement, achIndex) => (
+                    <div key={achIndex} className="flex items-start space-x-3">
+                      <ChevronRight className="w-4 h-4 text-yellow-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-300 text-sm sm:text-base">{achievement}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12 sm:mt-16">
+            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white">{'}'}</span>
+          </div>
         </div>
       </section>
 
@@ -397,44 +467,6 @@ const experiences = [
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">
-              <span className="text-yellow-500">function</span> getExperience() {'{'}
-            </h2>
-          </div>
-          
-          <div className="space-y-8 sm:space-y-12">
-            {experiences.map((exp, index) => (
-              <div key={index} className="bg-gray-900 rounded-lg border border-yellow-500/20 p-6 sm:p-8 hover:border-yellow-500/40 transition-all">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-6">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                    <p className="text-yellow-500 text-base sm:text-lg">{exp.company}</p>
-                  </div>
-                  <div className="mt-2 lg:mt-0 lg:text-right">
-                    <p className="text-red-500 font-mono text-sm sm:text-base">{exp.period}</p>
-                  </div>
-                </div>
-                <div className="space-y-2 sm:space-y-3">
-                  {exp.achievements.map((achievement, achIndex) => (
-                    <div key={achIndex} className="flex items-start space-x-3">
-                      <ChevronRight className="w-4 h-4 text-yellow-500 mt-1 flex-shrink-0" />
-                      <span className="text-gray-300 text-sm sm:text-base">{achievement}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12 sm:mt-16">
-            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white">{'}'}</span>
-          </div>
-        </div>
-      </section>
 
       {/* Skills Section */}
       <section id="skills" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
