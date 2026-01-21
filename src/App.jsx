@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, Menu, X, ArrowUp, ChevronRight, Download} from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, Menu, X, ArrowUp, ChevronRight, Download, Sun, Moon} from 'lucide-react';
 import nikunjPfp from './assets/nikunj_pfp.jpg';
 import dataScience from './assets/Nikunj_Pradhan_Data_Resume_12_4_2025.pdf';
 import SWE from './assets/Nikunj_Pradhan_SWE_Resume_12_4_2025.pdf';
@@ -9,6 +9,26 @@ const App = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentCommand, setCurrentCommand] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const theme = {
+    bg: isDarkMode ? 'bg-black' : 'bg-white',
+    text: isDarkMode ? 'text-gray-300' : 'text-gray-700',
+    textSecondary: isDarkMode ? 'text-gray-400' : 'text-gray-600',
+    textMuted: isDarkMode ? 'text-gray-500' : 'text-gray-500',
+    accent: isDarkMode ? 'purple' : 'emerald',
+    cardBg: isDarkMode ? 'bg-gray-900' : 'bg-gray-100',
+    cardBorder: isDarkMode ? 'border-purple-500/20' : 'border-emerald-500/20',
+    cardHoverBorder: isDarkMode ? 'hover:border-purple-500/40' : 'hover:border-emerald-500/40',
+    accentText: isDarkMode ? 'text-purple-500' : 'text-emerald-500',
+    hoverAccent: isDarkMode ? 'hover:text-purple-500' : 'hover:text-emerald-500',
+    navBg: isDarkMode ? 'bg-black/95' : 'bg-white/95',
+    navBorder: isDarkMode ? 'border-purple-500/30' : 'border-emerald-500/30',
+    sectionBg: isDarkMode ? 'bg-gray-900/30' : 'bg-gray-50',
+    footerBorder: isDarkMode ? 'border-purple-500/20' : 'border-emerald-500/20',
+    buttonBg: isDarkMode ? 'bg-purple-500' : 'bg-emerald-500',
+    buttonHover: isDarkMode ? 'hover:bg-purple-400' : 'hover:bg-emerald-400',
+  };
   
   const commands = [
     'git status',
@@ -242,34 +262,39 @@ const experiences = [
 
 
   return (
-    <div className="min-h-screen bg-black text-gray-300 font-mono">
+    <div className={`min-h-screen ${theme.bg} ${theme.text} font-mono`}>
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/95 backdrop-blur-md border-b border-purple-500/30' : 'bg-transparent'
+        isScrolled ? `${theme.navBg} backdrop-blur-md border-b ${theme.navBorder}` : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-3 sm:py-4">
             <div className="flex items-center space-x-2">
-              <span className="text-lg sm:text-xl font-bold text-purple-500">~/nikunj-pradhan</span>
+              <span className={`text-lg sm:text-xl font-bold ${theme.accentText}`}>~/nikunj-pradhan</span>
             </div>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-              {['about', 'projects', 'experience', 'skills', 'contact'].map((item) => (
-                <button 
-                  key={item}
-                  onClick={() => scrollToSection(item)} 
-                  className="text-gray-400 hover:text-purple-500 transition-colors text-sm lg:text-base"
-                >
-                  .{item}()
-                </button>
-              ))}
+              <div className="flex items-center space-x-6 lg:space-x-8">
+                {['about', 'projects', 'experience', 'skills', 'contact'].map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item)}
+                    className={`text-gray-400 ${theme.hoverAccent} transition-colors text-sm lg:text-base`}
+                  >
+                    .{item}()
+                  </button>
+                ))}
+              </div>
+              <button onClick={() => setIsDarkMode(!isDarkMode)} className={`text-gray-400 ${theme.hoverAccent} transition-colors`}>
+                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-purple-500 z-50 relative"
+              className={`md:hidden ${theme.accentText} z-50 relative`}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -277,13 +302,13 @@ const experiences = [
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-b border-purple-500/30">
+            <div className={`md:hidden absolute top-full left-0 right-0 ${theme.navBg} backdrop-blur-md border-b ${theme.navBorder}`}>
               <div className="px-4 py-6 space-y-4">
                 {['about', 'skills', 'experience', 'projects', 'contact'].map((item) => (
-                  <button 
+                  <button
                     key={item}
-                    onClick={() => scrollToSection(item)} 
-                    className="block w-full text-left text-gray-400 hover:text-purple-500 transition-colors py-2 text-lg"
+                    onClick={() => scrollToSection(item)}
+                    className={`block w-full text-left text-gray-400 ${theme.hoverAccent} transition-colors py-2 text-lg`}
                   >
                     .{item}()
                   </button>
@@ -301,61 +326,61 @@ const experiences = [
             {/* Left side - Content */}
             <div className="order-2 lg:order-1">
               {/* Terminal Window */}
-              <div className="bg-gray-900 rounded-lg border border-purple-500/30 shadow-2xl mb-6 sm:mb-8">
-                <div className="bg-gray-800 px-3 sm:px-4 py-2 flex items-center space-x-2">
+              <div className={`${theme.cardBg} rounded-lg border ${theme.cardBorder} shadow-2xl mb-6 sm:mb-8`}>
+                <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-gray-200'} px-3 sm:px-4 py-2 flex items-center space-x-2`}>
                   <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full"></div>
                   <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
                   <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
                   <span className="text-gray-300 text-xs sm:text-sm ml-2 sm:ml-4">terminal</span>
                 </div>
                 <div className="p-4 sm:p-6">
-                  <div className="text-purple-500 mb-2 text-sm sm:text-base">
+                  <div className={`${theme.accentText} mb-2 text-sm sm:text-base`}>
                     <span className="text-red-500">nikunj@portfolio</span>
-                    <span className="text-white">:</span>
+                    <span className={isDarkMode ? 'text-white' : 'text-black'}>:</span>
                     <span className="text-yellow-500">~</span>
-                    <span className="text-white">$ whoami</span>
+                    <span className={isDarkMode ? 'text-white' : 'text-black'}>$ whoami</span>
                   </div>
-                  <div className="text-gray-300 mb-4 text-sm sm:text-base">
+                  <div className={`${theme.text} mb-4 text-sm sm:text-base`}>
                     Data Scientist | Data Engineer | Software Engineer |  Undergraduate & Graduate Computer Science Student @ Missouri S&T
                   </div>
-                  <div className="text-purple-500 text-sm sm:text-base break-all">
+                  <div className={`${theme.accentText} text-sm sm:text-base break-all`}>
                     <span className="text-red-500">nikunj@portfolio</span>
-                    <span className="text-white">:</span>
+                    <span className={isDarkMode ? 'text-white' : 'text-black'}>:</span>
                     <span className="text-yellow-500">~</span>
-                    <span className="text-white">$ {currentCommand}</span>
+                    <span className={isDarkMode ? 'text-white' : 'text-black'}>$ {currentCommand}</span>
                     <span className="animate-pulse">_</span>
                   </div>
                 </div>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
-                <span className="text-white">Hello, I'm </span>
-                <span className="text-purple-500">Nikunj </span>
+                <span className={isDarkMode ? 'text-white' : 'text-black'}>Hello, I'm </span>
+                <span className={`${theme.accentText}`}>Nikunj </span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-400 mb-6 sm:mb-8 leading-relaxed">
+              <p className={`text-lg sm:text-xl ${theme.textSecondary} mb-6 sm:mb-8 leading-relaxed`}>
               I'm a Senior in Computer Science at Missouri S&T and I am currently working as a Data Science Co-op at Hunter Engineering Company. My goal is to become an experienced Data Scientist and Software Engineer.
               </p>
 
               <div className="flex space-x-4 sm:space-x-6">
-                <a href="https://github.com/nikunjpradhan31" target="_blank" rel="noopener noreferrer" 
-                   className="text-gray-500 hover:text-purple-500 transition-colors">
+                <a href="https://github.com/nikunjpradhan31" target="_blank" rel="noopener noreferrer"
+                   className={`text-gray-500 ${theme.hoverAccent} transition-colors`}>
                   <Github className="w-7 h-7 sm:w-8 sm:h-8" />
                 </a>
                 <a href="https://www.linkedin.com/in/nikunj-pradhan/" target="_blank" rel="noopener noreferrer"
-                   className="text-gray-500 hover:text-purple-500 transition-colors">
+                   className={`text-gray-500 ${theme.hoverAccent} transition-colors`}>
                   <Linkedin className="w-7 h-7 sm:w-8 sm:h-8" />
                 </a>
                 <a href="mailto:nikunj.pradhan31@gmail.com"
-                   className="text-gray-500 hover:text-purple-500 transition-colors">
+                   className={`text-gray-500 ${theme.hoverAccent} transition-colors`}>
                   <Mail className="w-7 h-7 sm:w-8 sm:h-8" />
                 </a>
                    <a href={SWE} target="_blank" rel="noopener noreferrer"
-       className="flex items-center text-gray-500 hover:text-purple-500 transition-colors space-x-2">
+       className={`flex items-center text-gray-500 ${theme.hoverAccent} transition-colors space-x-2`}>
       <span>SWE Resume</span>
       <Download className="w-5 h-5 sm:w-5 sm:h-5" />
     </a>
     <a href={dataScience} target="_blank" rel="noopener noreferrer"
-       className="flex items-center text-gray-500 hover:text-purple-500 transition-colors space-x-2">
+       className={`flex items-center text-gray-500 ${theme.hoverAccent} transition-colors space-x-2`}>
       <span>Data Science Resume</span>
       <Download className="w-5 h-5 sm:w-5 sm:h-5" />
     </a>
@@ -381,20 +406,20 @@ const experiences = [
 
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+      <section id="experience" className={`py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${theme.sectionBg}`}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">
+            <h2 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-4`}>
               <span className="text-yellow-500">function</span> getExperience() {'{'}
             </h2>
           </div>
           
           <div className="space-y-8 sm:space-y-12">
             {experiences.map((exp, index) => (
-              <div key={index} className="bg-gray-900 rounded-lg border border-yellow-500/20 p-6 sm:p-8 hover:border-yellow-500/40 transition-all">
+              <div key={index} className={`${theme.cardBg} rounded-lg border border-yellow-500/20 p-6 sm:p-8 hover:border-yellow-500/40 transition-all`}>
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-6">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{exp.title}</h3>
+                    <h3 className={`text-xl sm:text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>{exp.title}</h3>
                     <p className="text-yellow-500 text-base sm:text-lg">{exp.company}</p>
                   </div>
                   <div className="mt-2 lg:mt-0 lg:text-right">
@@ -405,7 +430,7 @@ const experiences = [
                   {exp.achievements.map((achievement, achIndex) => (
                     <div key={achIndex} className="flex items-start space-x-3">
                       <ChevronRight className="w-4 h-4 text-yellow-500 mt-1 flex-shrink-0" />
-                      <span className="text-gray-300 text-sm sm:text-base">{achievement}</span>
+                      <span className={`text-gray-300 text-sm sm:text-base ${isDarkMode ? 'text-white' : 'text-black'} `}>{achievement}</span>
                     </div>
                   ))}
                 </div>
@@ -414,7 +439,7 @@ const experiences = [
           </div>
           
           <div className="text-center mt-12 sm:mt-16">
-            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white">{'}'}</span>
+            <span className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}>{'}'}</span>
           </div>
         </div>
       </section>
@@ -423,23 +448,23 @@ const experiences = [
       <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">
+            <h2 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-4`}>
               <span className="text-red-500">class</span> Projects {'{'}
             </h2>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="bg-gray-900 rounded-lg border border-red-500/20 p-6 sm:p-8 hover:border-red-500/40 transition-all">
+              <div key={index} className={`${theme.cardBg} rounded-lg border border-red-500/20 p-6 sm:p-8 hover:border-red-500/40 transition-all`}>
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{project.title}</h3>
+                    <h3 className={`text-xl sm:text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}>{project.title}</h3>
                     <span className="text-red-500 text-xs sm:text-sm">Status: {project.status}</span>
                   </div>
                   <Code className="w-6 h-6 sm:w-8 sm:h-8 text-red-500 flex-shrink-0" />
                 </div>
-                
-                <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">{project.description}</p>
+
+                <p className={`${theme.text} mb-4 sm:mb-6 text-sm sm:text-base`}>{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                   {project.tech.map((tech, techIndex) => (
@@ -466,7 +491,7 @@ const experiences = [
           </div>
           
           <div className="text-center mt-12 sm:mt-16">
-            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white">{'}'}</span>
+            <span className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}>{'}'}</span>
           </div>
         </div>
       </section>
@@ -476,18 +501,18 @@ const experiences = [
       <section id="skills" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">
-              <span className="text-purple-500">const</span> skills = {'{'}
+            <h2 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-4`}>
+              <span className={`${theme.accentText}`}>const</span> skills = {'{'}
             </h2>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {Object.entries(skillCategories).map(([category, skills]) => (
-              <div key={category} className="bg-gray-900 rounded-lg border border-purple-500/20 p-4 sm:p-6 hover:border-purple-500/40 transition-all">
-                <h3 className="text-purple-500 font-bold mb-4 sm:mb-6 text-base sm:text-lg">{category}:</h3>
+              <div key={category} className={`${theme.cardBg} rounded-lg ${theme.cardBorder} p-4 sm:p-6 ${theme.cardHoverBorder} transition-all`}>
+                <h3 className={`${theme.accentText} font-bold mb-4 sm:mb-6 text-base sm:text-lg`}>{category}:</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                   {skills.map((skill, index) => (
-                    <div key={index} className="text-gray-300 text-xs sm:text-sm bg-gray-800 px-2 sm:px-3 py-2 rounded border border-gray-700">
+                    <div key={index} className={`${theme.text} text-xs sm:text-sm ${isDarkMode ? 'bg-gray-800' : 'bg-gray-200'} px-2 sm:px-3 py-2 rounded border ${isDarkMode ? 'border-gray-700' : 'border-gray-300'}`}>
                       {skill}
                     </div>
                   ))}
@@ -497,7 +522,7 @@ const experiences = [
           </div>
           
           <div className="text-center mt-12 sm:mt-16">
-            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white">{'}'}</span>
+            <span className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}>{'}'}</span>
           </div>
         </div>
       </section>
@@ -505,52 +530,52 @@ const experiences = [
 
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+      <section id="contact" className={`py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${theme.sectionBg}`}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6 sm:mb-8">
-            <span className="text-purple-500">async</span> connect() {'{'}
+          <h2 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-6 sm:mb-8`}>
+            <span className={`${theme.accentText}`}>async</span> connect() {'{'}
           </h2>
-          <p className="text-gray-300 text-base sm:text-lg mb-8 sm:mb-12">
+          <p className={`${theme.text} text-base sm:text-lg mb-8 sm:mb-12`}>
             Let's build something amazing together. Always open to new opportunities and collaborations.
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            <a href="mailto:nikunj.pradhan31@gmail.com" 
-               className="bg-gray-900 rounded-lg border border-purple-500/20 p-4 sm:p-6 hover:border-purple-500/50 transition-all">
-              <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500 mx-auto mb-3 sm:mb-4" />
-              <h3 className="text-white font-bold mb-2 text-sm sm:text-base">Email</h3>
-              <p className="text-gray-400 text-xs sm:text-sm break-all">nikunj.pradhan31@gmail.com</p>
+            <a href="mailto:nikunj.pradhan31@gmail.com"
+                className={`${theme.cardBg} rounded-lg ${theme.cardBorder} p-4 sm:p-6 hover:${theme.accent}-500/50 transition-all`}>
+              <Mail className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.accentText} mx-auto mb-3 sm:mb-4`} />
+              <h3 className={`${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-2 text-sm sm:text-base`}>Email</h3>
+              <p className={`${theme.textSecondary} text-xs sm:text-sm break-all`}>nikunj.pradhan31@gmail.com</p>
             </a>
-            
+
             <a href="https://github.com/nikunjpradhan31" target="_blank" rel="noopener noreferrer"
-               className="bg-gray-900 rounded-lg border border-purple-500/20 p-4 sm:p-6 hover:border-purple-500/50 transition-all">
-              <Github className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500 mx-auto mb-3 sm:mb-4" />
-              <h3 className="text-white font-bold mb-2 text-sm sm:text-base">GitHub</h3>
-              <p className="text-gray-400 text-xs sm:text-sm">@nikunjpradhan31</p>
+                className={`${theme.cardBg} rounded-lg ${theme.cardBorder} p-4 sm:p-6 hover:${theme.accent}-500/50 transition-all`}>
+              <Github className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.accentText} mx-auto mb-3 sm:mb-4`} />
+              <h3 className={`${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-2 text-sm sm:text-base`}>GitHub</h3>
+              <p className={`${theme.textSecondary} text-xs sm:text-sm`}>@nikunjpradhan31</p>
             </a>
-            
+
             <a href="https://www.linkedin.com/in/nikunj-pradhan/" target="_blank" rel="noopener noreferrer"
-               className="bg-gray-900 rounded-lg border border-purple-500/20 p-4 sm:p-6 hover:border-purple-500/50 transition-all sm:col-span-2 lg:col-span-1">
-              <Linkedin className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500 mx-auto mb-3 sm:mb-4" />
-              <h3 className="text-white font-bold mb-2 text-sm sm:text-base">LinkedIn</h3>
-              <p className="text-gray-400 text-xs sm:text-sm">nikunj-pradhan</p>
+                className={`${theme.cardBg} rounded-lg ${theme.cardBorder} p-4 sm:p-6 hover:${theme.accent}-500/50 transition-all sm:col-span-2 lg:col-span-1`}>
+              <Linkedin className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.accentText} mx-auto mb-3 sm:mb-4`} />
+              <h3 className={`${isDarkMode ? 'text-white' : 'text-black'} font-bold mb-2 text-sm sm:text-base`}>LinkedIn</h3>
+              <p className={`${theme.textSecondary} text-xs sm:text-sm`}>nikunj-pradhan</p>
             </a>
           </div>
           
           <div className="text-center">
-            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white">{'}'}</span>
+            <span className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}>{'}'}</span>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 border-t border-purple-500/20">
+      <footer className={`py-8 sm:py-12 px-4 sm:px-6 lg:px-8 border-t ${theme.footerBorder}`}>
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center items-center space-x-4 mb-4">
-            <Terminal className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
-            <span className="text-gray-400 text-sm sm:text-base">© 2025 Nikunj Pradhan</span>
+            <Terminal className={`w-4 h-4 sm:w-5 sm:h-5 ${theme.accentText}`} />
+            <span className={`${theme.textSecondary} text-sm sm:text-base`}>© 2025 Nikunj Pradhan</span>
           </div>
-          <p className="text-gray-500 text-xs sm:text-sm">
+          <p className={`${theme.textMuted} text-xs sm:text-sm`}>
             Built with React, Tailwind CSS, and lots of momo 🥟
           </p>
         </div>
@@ -560,7 +585,7 @@ const experiences = [
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 bg-purple-500 text-white p-2 sm:p-3 rounded-full shadow-lg hover:bg-purple-400 transition-colors z-40"
+          className={`fixed bottom-6 right-6 sm:bottom-8 sm:right-8 ${theme.buttonBg} text-white p-2 sm:p-3 rounded-full shadow-lg ${theme.buttonHover} transition-colors z-40`}
         >
           <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
