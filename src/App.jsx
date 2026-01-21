@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, Menu, X, ArrowUp, ChevronRight, Download} from 'lucide-react';
 import nikunjPfp from './assets/nikunj_pfp.jpg';
-import dataScience from './assets/Nikunj_Pradhan_Data_Resume_9_27_2025.pdf';
-import SWE from './assets/Nikunj_Pradhan_SWE_Resume_9_28_2025.pdf';
+import dataScience from './assets/Nikunj_Pradhan_Data_Resume_12_4_2025.pdf';
+import SWE from './assets/Nikunj_Pradhan_SWE_Resume_12_4_2025.pdf';
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -59,10 +59,8 @@ const skillCategories = {
     "C++",
     "JavaScript",
     "TypeScript",
-    "Java",
     "MATLAB",
     "SQL",
-    "Bash",
     "HTML/CSS"
   ],
   Frameworks: [
@@ -70,8 +68,6 @@ const skillCategories = {
     "React.js",
     "Node.js",
     "Express.js",
-    "PyTorch Lightning",
-    "Crow",
     "Django"
   ],
   Databases: [
@@ -92,7 +88,6 @@ const skillCategories = {
     "WebSockets",
     "CI/CD",
     "AWS (S3, EC2, Lambda)",
-    "Azure ML"
   ],
   Libraries: [
     "NumPy",
@@ -115,7 +110,8 @@ const skillCategories = {
     "Transformers",
     "Object Detection & Classification",
     "Recommendation Systems",
-    "Regression"
+    "Regression",
+    "NLP"
   ]
 };
 
@@ -132,14 +128,21 @@ const skillCategories = {
 },
   {
     "title": "Nepali Devanagari OCR",
-    "description": "Built a Nepali OCR system with CRNN and transformer models, achieving 97% character-level and 92% paragraph-level accuracy. Collected/augmented 400+ images, evaluated with error metrics, and deployed via FastAPI for real-time and batch inference.",
-    "tech": ["Python", "Pytorch", "OpenCV", , "FastAPI", "React", "CRNN", "Transformer", "Jupyter"],
+    "description": "Built a Nepali OCR pipeline with CRNN architecture using ResNet and LSTM/Bi-LSTM models; compared CTC and Attention mechanisms, benchmarked against PaddleOCR and EasyOCR, collected and augmented 800+ text images, and deployed via FastAPI for real-time and batch inference with CER/WER evaluation.",
+    "tech": ["Python", "Pytorch", "OpenCV", "FastAPI", "React", "CRNN", "Jupyter"],
     "github": "https://github.com/nikunjpradhan31/NepaliDevanagariVision",
     "live": null,
-    "status": "In Progress"
+    "status": "Completed"
   },
 
-
+  {
+    "title": "20 NewsGroup Text Classification",
+    "description": " Developed and evaluated three text classification models (Custom Naive Bayes, Linear SVM, and Multinomial Logistic Regression) on the 20 Newsgroups dataset, achieving up to 95.3% accuracy.",
+    "tech": ["Python", "Jupyter", "Numpy", "Pandas", "Scikit-Learn" ],
+    "github": "https://github.com/nikunjpradhan31/NewsGroupClassificationStudy",
+    "live": null,
+    "status": "Completed"
+  },
      {
     "title": "Vault Keeper",
     "description": "Open-source self-hosted file server with end-to-end encryption, JWT authentication, role-based access control, file versioning, and advanced search as a privacy-focused alternative to cloud storage.",
@@ -148,14 +151,14 @@ const skillCategories = {
     "live": null,
     "status": "In Progress"
   },
-  {
-    "title": "YAML Scraper",
-    "description": "Modular web scraping framework with YAML-based configuration, enabling no-code workflow setup. Supports async execution, pagination, proxy rotation, rate limiting, and Playwright for dynamic content.",
-    "tech": ["Python", "YAML", "aiohttp", "BeautifulSoup4", "Playwright", "pandas", "SQLite", "Selenium"],
-    "github": "https://github.com/nikunjpradhan31/YAML-Web-Scrapper",
-    "live": null,
-    "status": "In Progress"
-  },
+  // {
+  //   "title": "YAML Scraper",
+  //   "description": "Modular web scraping framework with YAML-based configuration, enabling no-code workflow setup. Supports async execution, pagination, proxy rotation, rate limiting, and Playwright for dynamic content.",
+  //   "tech": ["Python", "YAML", "aiohttp", "BeautifulSoup4", "Playwright", "pandas", "SQLite", "Selenium"],
+  //   "github": "https://github.com/nikunjpradhan31/YAML-Web-Scrapper",
+  //   "live": null,
+  //   "status": "In Progress"
+  // },
 
   {
   "title": "Homelab",
@@ -182,13 +185,13 @@ const skillCategories = {
     },
 
 
-    {
-      title: "Matrix Calculator",
-      description: "Advanced matrix operations including Gauss-Jordan elimination using NumPy and SciPy for linear algebra computations.",
-      tech: ["Python", "NumPy", "SciPy", "C++"],
-      github: "https://github.com/nikunjpradhan31/LinearAlgebraCalculator",
-      status: "Complete"
-    },
+    // {
+    //   title: "Matrix Calculator",
+    //   description: "Advanced matrix operations including Gauss-Jordan elimination using NumPy and SciPy for linear algebra computations.",
+    //   tech: ["Python", "NumPy", "SciPy", "C++"],
+    //   github: "https://github.com/nikunjpradhan31/LinearAlgebraCalculator",
+    //   status: "Complete"
+    // },
     
     
     
@@ -200,9 +203,9 @@ const experiences = [
     company: "Hunter Engineering Company",
     period: "January 2025 – August 2025",
     achievements: [
-  "Elevated deep learning model workflow accuracy from 32% to 84% through hyperparameter optimization, active learning, and selective data clustering, improving model reliability for diverse usage.",
+  "Elevated deep learning model workflow accuracy from 56% to 84% through hyperparameter optimization, active learning, and selective data clustering.",
   "Delivered full-stack apps (FastAPI, React, SQL Server) production model dashboards, dataset analytical applications, and AI-assisted annotation.",
-  "Engineered geometric AI perspective-correction model, increasing classification accuracy by 35% and reducing manual data-cleaning effort.",
+  "Built a CNN-based regression model predicting 4-point image coordinates using RMSE and MAE loss, improving geometric correction accuracy by 23% and streamlining preprocessing.",
   "Automated cross-cloud benchmarking pipelines across AWS and Azure, enabling direct performance comparisons of vendor AI/ML models to drive strategic evaluation and decision-making.",
   "Accelerated distributed multi-GPU training workflows by 66% and development-to-production cycles through close collaboration with R&D teams.",
 ]
@@ -211,14 +214,14 @@ const experiences = [
   {
     title: "Backend Engineer",
     company: "Tally Receipts",
-    period: "June 2025 – Present",
+    period: "June 2025 – December 2025",
     achievements: 
     [
   "Redesigned and migrated backend from MongoDB to AWS DynamoDB, redesigning schemas for efficient querying, scalability, and data lifecycle management.",
   "Integrated FidelSDK for secure card linking in the frontend, designed business logic for safe card tracking in the database, and implemented webhooks to collect user purchase receipts.",
   "Refactored and modernized Node.js + Express.js services and integrated AWS Lambda, Amplify, and IAM, streamlining backend logic and infrastructure.",
   "Built AI-powered receipt categorization service, reducing manual entry effort for users and integrating seamlessly with calendar workflows (Google, Microsoft).",
-        "Implemented S3 file upload flows with pre-signed URLs and collaborated with the React Native frontend to maintain API compatibility post-migration",
+  "Implemented S3 file upload flows with pre-signed URLs and collaborated with the React Native frontend to maintain API compatibility post-migration",
 
 ]
   },
@@ -227,9 +230,10 @@ const experiences = [
     company: "Missouri University of Science and Technology",
     period: "August 2023 – December 2024",
     achievements: [
-  "Improved CV model accuracy by 62% through optimization, hyperparameter tuning, and algorithmic refinement using C++ OpenCV and Point Cloud.",
-  "Developed a MATLAB/C++ application simulating 3D triaxial shear tests with deep learning and parallel computing for soil compression modeling, incorporating advanced CV techniques like watershed segmentation and 3D model triangulation via ray tracing.",
-  "Collaborated with other research teams for development, code reviews, and future experimental planning."
+
+      "Optimized algorithms, increasing blob analysis accuracy 62% through hyperparameter tuning, and algorithmic refinement using C++ OpenCV and MATLAB.",
+"Designed a C++/MATLAB application simulating 3D triaxial shear tests with deep learning and parallel computing for soil compression modeling with Point Cloud Library.",
+"Utilized advanced computer vision techniques, including watershed segmentation and 3D model triangulation via ray tracing, and used a KNN-based algorithm for point classification.",
 ]
 
   },
@@ -312,7 +316,7 @@ const experiences = [
                     <span className="text-white">$ whoami</span>
                   </div>
                   <div className="text-gray-300 mb-4 text-sm sm:text-base">
-                    Data Science Co-Op @ Hunter Engineering Company |  Computer Science Student @ Missouri S&T
+                    Data Scientist | Data Engineer | Software Engineer |  Undergraduate & Graduate Computer Science Student @ Missouri S&T
                   </div>
                   <div className="text-purple-500 text-sm sm:text-base break-all">
                     <span className="text-red-500">nikunj@portfolio</span>
@@ -329,7 +333,7 @@ const experiences = [
                 <span className="text-purple-500">Nikunj </span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-400 mb-6 sm:mb-8 leading-relaxed">
-              I'm a Senior in Computer Science at Missouri S&T and I am currently working as a Data Science Co-op at Hunter Engineering Company. My goal is to become an experienced Data Scientist or Software Engineer.
+              I'm a Senior in Computer Science at Missouri S&T and I am currently working as a Data Science Co-op at Hunter Engineering Company. My goal is to become an experienced Data Scientist and Software Engineer.
               </p>
 
               <div className="flex space-x-4 sm:space-x-6">
