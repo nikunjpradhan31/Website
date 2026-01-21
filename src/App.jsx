@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, Menu, X, ArrowUp, ChevronRight, Download, Sun, Moon} from 'lucide-react';
-import nikunjPfp from './assets/nikunj_pfp.jpg';
+import nikunjPfp from './assets/nikunj_pfp.jpeg';
 import dataScience from './assets/Nikunj_Pradhan_Data_Resume_12_4_2025.pdf';
 import SWE from './assets/Nikunj_Pradhan_SWE_Resume_12_4_2025.pdf';
 
@@ -9,7 +9,7 @@ const App = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentCommand, setCurrentCommand] = useState('');
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const theme = {
     bg: isDarkMode ? 'bg-black' : 'bg-white',
@@ -430,7 +430,7 @@ const experiences = [
                   {exp.achievements.map((achievement, achIndex) => (
                     <div key={achIndex} className="flex items-start space-x-3">
                       <ChevronRight className="w-4 h-4 text-yellow-500 mt-1 flex-shrink-0" />
-                      <span className={`text-gray-300 text-sm sm:text-base ${isDarkMode ? 'text-white' : 'text-black'} `}>{achievement}</span>
+                      <span className="mb-4 sm:mb-6 text-sm sm:text-base">{achievement}</span>
                     </div>
                   ))}
                 </div>
