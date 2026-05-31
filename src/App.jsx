@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, Menu, X, ArrowUp, ChevronRight, Download, Sun, Moon} from 'lucide-react';
 import nikunjPfp from './assets/nikunj_pfp.jpeg';
-import dataScience from './assets/Nikunj_Pradhan_Data_Resume_12_4_2025.pdf';
-import SWE from './assets/Nikunj_Pradhan_SWE_Resume_12_4_2025.pdf';
+import dataScience from './assets/Nikunj_Pradhan_Data_Resume_5_30_26.pdf';
+import SWE from './assets/Nikunj_Pradhan_SWE_Resume_5_30_26.pdf';
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,81 +76,84 @@ const App = () => {
 const skillCategories = {
   Languages: [
     "Python",
-    "C++",
     "JavaScript",
-    "TypeScript",
-    "MATLAB",
     "SQL",
-    "HTML/CSS"
+    "C++",
+    "Java"
   ],
   Frameworks: [
     "FastAPI",
     "React.js",
-    "Node.js",
     "Express.js",
-    "Django"
+    "Spring Boot",
   ],
   Databases: [
     "PostgreSQL",
-    "Microsoft SQL Server",
+    "Microsoft SQL",
+    "pgvector",
     "MongoDB",
-    "Firebase",
-    "DynamoDB",
     "MinIO",
-    "Mongoose"
+    "Redis"
   ],
-  Tools: [
+
+  Deployment: [
     "Docker",
     "Kubernetes",
-    "Git",
-    "Linux/Ubuntu",
     "NGINX",
-    "WebSockets",
-    "CI/CD",
-    "AWS (S3, EC2, Lambda)",
-  ],
+    "AWS",
+    "CI/CD",],
+
   Libraries: [
     "NumPy",
     "SciPy",
     "Pandas",
     "Matplotlib",
-    "Jupyter",
     "OpenCV",
-    "SQLAlchemy",
-    "Socket.IO",
-    "WebRTC"
+    "Playwright",
+    "BeautifulSoup",
   ],
   ML: [
     "PyTorch",
     "Scikit-learn",
-    "ONNX",
-    "YOLO",
-    "SuperGradients",
-    "CNN/CRNN",
-    "Transformers",
-    "Object Detection & Classification",
     "Recommendation Systems",
-    "Regression",
-    "NLP"
+    "RAG",
+    "MLOps",
+    "LLMOps",
   ]
 };
-
-
 
   const projects = [
 {
   title: "Himalayan Hut",
   description: "Full-stack movie watchlist and recommendation app with personalized recommendations, secure 2FA login, and self-hosted deployment using Docker, NGINX, and Kubernetes.",
-  tech: ["React", "Tailwind CSS", "FastAPI", "PostgreSQL", "MinIO", "Scikit-learn", "Python", "Docker","Kubernetes", "NGINX"],
+  tech: ["React", "FastAPI", "PostgreSQL", "MinIO", "Scikit-learn", "Python", "Docker","Kubernetes"],
   github: "https://github.com/nikunjpradhan31/TheHimalayanHut",
-  live: "https://www.himalayanhut.xyz",
+  live: "https://himalapp.nikunjpradhan.com",
   status: "Deployed"
 },
   {
     "title": "Nepali Devanagari OCR",
     "description": "Built a Nepali OCR pipeline with CRNN architecture using ResNet and LSTM/Bi-LSTM models; compared CTC and Attention mechanisms, benchmarked against PaddleOCR and EasyOCR, collected and augmented 800+ text images, and deployed via FastAPI for real-time and batch inference with CER/WER evaluation.",
-    "tech": ["Python", "Pytorch", "OpenCV", "FastAPI", "React", "CRNN", "Jupyter"],
+    "tech": ["Python", "Pytorch", "OpenCV", "FastAPI", "CRNN", "Seq2Seq"],
     "github": "https://github.com/nikunjpradhan31/NepaliDevanagariVision",
+    "live": null,
+    "status": "Deployed"
+  },
+
+    {
+    "title": "Hybrid GNN-Mamba Model for Toxicity Prediction",
+    "description": "Designed a parallel GIN + Mamba hybrid architecture for multi-task molecular toxicity prediction on Tox21. Innovated a graph-to-sequence mapping strategy achieving 75% ROC-AUC and 36% PR-AUC under scaffold split",
+    "tech": ["Pytorch Geometric", "Mamba-SMM", "RDkit", "Tox21" ],
+    "github": "https://github.com/nikunjpradhan31/Tox21-Modeling",
+    "live": null,
+    "status": "Completed"
+  },
+
+    {
+    "title": "Blackjack Computer Vision Edge Analyzer",
+    "description": "Architected a high-throughput decision engine integrating a CV pipeline and Apache Kafka to stream real-time data into a NumPy-vectorized Monte Carlo engine, simulating 100,000 concurrent states to calculate optimal Expected Value (EV).",
+    "tech": ["FastAPI", "Numpy", "Apache Kafka"],
+    "github": "https://github.com/nikunjpradhan31/FullHouseDevs",
     "live": null,
     "status": "Completed"
   },
@@ -163,26 +166,11 @@ const skillCategories = {
     "live": null,
     "status": "Completed"
   },
-     {
-    "title": "Vault Keeper",
-    "description": "Open-source self-hosted file server with end-to-end encryption, JWT authentication, role-based access control, file versioning, and advanced search as a privacy-focused alternative to cloud storage.",
-    "tech": ["C++", "Crow", "Docker", "PostgreSQL", "OpenSSL", "JWT", "MinIO"],
-    "github": "https://github.com/username/VaultKeeper",
-    "live": null,
-    "status": "In Progress"
-  },
-  // {
-  //   "title": "YAML Scraper",
-  //   "description": "Modular web scraping framework with YAML-based configuration, enabling no-code workflow setup. Supports async execution, pagination, proxy rotation, rate limiting, and Playwright for dynamic content.",
-  //   "tech": ["Python", "YAML", "aiohttp", "BeautifulSoup4", "Playwright", "pandas", "SQLite", "Selenium"],
-  //   "github": "https://github.com/nikunjpradhan31/YAML-Web-Scrapper",
-  //   "live": null,
-  //   "status": "In Progress"
-  // },
+
 
   {
   "title": "Homelab",
-  "description": "Personal server setup running Ubuntu 22.04, featuring Caddy reverse proxy, PostgreSQL databases, NAS storage, and hosting multiple websites including this portfolio and HimalayanHut.",
+  "description": "Personal server setup running Ubuntu 22.04, hosting Open WebUI contains a personal AI server channel ,featuring Caddy reverse proxy, PostgreSQL databases, NAS storage, and hosting multiple websites including this portfolio and HimalayanHut.",
   "tech": ["Ubuntu 22.04", "Caddy", "PostgreSQL", "NAS Storage", "Docker", "NGINX", "Reverse Proxy", "Web Hosting"],
   "github": null,
   "live": null,
@@ -192,26 +180,19 @@ const skillCategories = {
     {
   title: "Rhino Chat",
   description:"Real-time chat app supporting secure one-on-one and group messaging, file sharing, persistent chat history, and a responsive mobile-first interface.",
-  tech: ["React", "JavaScript", "Node.js", "Express.js", "MongoDB", "Socket.IO", "WebRTC", "GridFS"],
+  tech: ["React", "JavaScript", "Express.js", "MongoDB", "Socket.IO", "GridFS"],
   github: "https://github.com/nikunjpradhan31/Rhino",
   status: "Complete"
 },
 
-    {
-      title: "Triaxial Shear Test Analyzer",
-      description: "MATLAB/C++ app for analyzing triaxial shear tests using CV techniques, blob analysis, and k-NN to track deformation and reconstruct missing data, generating 3D models for research and visualization.",
-      tech: ["C++","MATLAB", "App Designer", "MATLAB Deep Learning Toolbox", "Computer Vision", "Point Cloud", "OpenCV"],
-      status: "Complete"
-    },
+  {
+    title: "Triaxial Shear Test Analyzer",
+    description: "MATLAB/C++ app for analyzing triaxial shear tests using CV techniques, blob analysis, and k-NN to track deformation and reconstruct missing data, generating 3D models for research and visualization.",
+    tech: ["C++","MATLAB", "App Designer", "MATLAB Deep Learning Toolbox", "Computer Vision", "Point Cloud", "OpenCV"],
+    status: "Complete"
+  },
 
 
-    // {
-    //   title: "Matrix Calculator",
-    //   description: "Advanced matrix operations including Gauss-Jordan elimination using NumPy and SciPy for linear algebra computations.",
-    //   tech: ["Python", "NumPy", "SciPy", "C++"],
-    //   github: "https://github.com/nikunjpradhan31/LinearAlgebraCalculator",
-    //   status: "Complete"
-    // },
     
     
     
@@ -219,15 +200,23 @@ const skillCategories = {
 
 const experiences = [
   {
+    title: "Data Science Intern",
+    company: "Quest Analytics",
+    period: "May 2026 – Present",
+    achievements: [
+]
+
+  },
+  {
     title: "Data Science Co-Op",
     company: "Hunter Engineering Company",
     period: "January 2025 – August 2025",
     achievements: [
-  "Elevated deep learning model workflow accuracy from 56% to 84% through hyperparameter optimization, active learning, and selective data clustering.",
-  "Delivered full-stack apps (FastAPI, React, SQL Server) production model dashboards, dataset analytical applications, and AI-assisted annotation.",
-  "Built a CNN-based regression model predicting 4-point image coordinates using RMSE and MAE loss, improving geometric correction accuracy by 23% and streamlining preprocessing.",
+  "Improved image-based alphanumeric and regional classification accuracy from 56% to 84% through deep learning architecture refinement and hyperparameter optimization on noisy, imbalanced datasets.",
+  "Engineered real-time production model dashboards, data pipelines, dataset analytical platform, and AI-assisted annotation endpoints.",
+  "Built a CNN-based regression model predicting 4-point image coordinates, improving geometric correction accuracy by 23% and streamlining preprocessing.",
   "Automated cross-cloud benchmarking pipelines across AWS and Azure, enabling direct performance comparisons of vendor AI/ML models to drive strategic evaluation and decision-making.",
-  "Accelerated distributed multi-GPU training workflows by 66% and development-to-production cycles through close collaboration with R&D teams.",
+  "Created and maintained custom ETL pipelines using FastAPI and Python to clean, validate, and process metadata and image data from 600+ worksites ingesting over 2M images",
 ]
 
   },
@@ -238,9 +227,8 @@ const experiences = [
     achievements: 
     [
   "Redesigned and migrated backend from MongoDB to AWS DynamoDB, redesigning schemas for efficient querying, scalability, and data lifecycle management.",
-  "Integrated FidelSDK for secure card linking in the frontend, designed business logic for safe card tracking in the database, and implemented webhooks to collect user purchase receipts.",
-  "Refactored and modernized Node.js + Express.js services and integrated AWS Lambda, Amplify, and IAM, streamlining backend logic and infrastructure.",
-  "Built AI-powered receipt categorization service, reducing manual entry effort for users and integrating seamlessly with calendar workflows (Google, Microsoft).",
+  "Integrated secure card linking API for application linking, designed business logic for safe card tracking in the database, and implemented webhooks to collect user purchase receipts.",
+  "Built an LLM-powered receipt categorization service for receipt summarization and classification, integrating with calendar workflows to reduce manual entry effort for users.",
   "Implemented S3 file upload flows with pre-signed URLs and collaborated with the React Native frontend to maintain API compatibility post-migration",
 
 ]
@@ -259,6 +247,22 @@ const experiences = [
   },
 ];
 
+const education = [
+  {
+    degree: "Master of Science in Computer Science",
+    school: "Missouri University of Science and Technology",
+    period: "Expected 2026 - GPA 4.0/4.0",
+    details: "Specializing in Data Science and Machine Learning Deployment."
+  },
+  {
+    degree: "Bachelor of Science in Computer Science",
+    school: "Missouri University of Science and Technology",
+    period: "2023 – 2026 -  GPA 4.0/4.0",
+    details: "Specializing in System Design Architecture, Data Science, and Software Engineering."
+  }
+];
+
+
 
 
   return (
@@ -276,7 +280,7 @@ const experiences = [
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               <div className="flex items-center space-x-6 lg:space-x-8">
-                {['about', 'projects', 'experience', 'skills', 'contact'].map((item) => (
+                {['about', 'experience', 'education', 'projects', 'skills', 'contact', ].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item)}
@@ -341,7 +345,7 @@ const experiences = [
                     <span className={isDarkMode ? 'text-white' : 'text-black'}>$ whoami</span>
                   </div>
                   <div className={`${theme.text} mb-4 text-sm sm:text-base`}>
-                    Data Scientist | Data Engineer | Software Engineer |  Undergraduate & Graduate Computer Science Student @ Missouri S&T
+                    Software Engineer | Data Scientist | DevOps Engineer |  Undergraduate & Graduate Computer Science Student @ Missouri S&T
                   </div>
                   <div className={`${theme.accentText} text-sm sm:text-base break-all`}>
                     <span className="text-red-500">nikunj@portfolio</span>
@@ -358,7 +362,7 @@ const experiences = [
                 <span className={`${theme.accentText}`}>Nikunj </span>
               </h1>
               <p className={`text-lg sm:text-xl ${theme.textSecondary} mb-6 sm:mb-8 leading-relaxed`}>
-              I'm a Senior in Computer Science at Missouri S&T and I am currently working as a Data Science Co-op at Hunter Engineering Company. My goal is to become an experienced Data Scientist and Software Engineer.
+              I'm a Senior in Computer Science at Missouri S&T and I am currently working as a Data Science Intern at Quest Analytics. My goal is to become an experienced Data Scientist and Software Engineer.
               </p>
 
               <div className="flex space-x-4 sm:space-x-6">
@@ -438,13 +442,50 @@ const experiences = [
             ))}
           </div>
           
-          <div className="text-center mt-12 sm:mt-16">
-            <span className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}>{'}'}</span>
-          </div>
-        </div>
-      </section>
+           <div className="text-center mt-12 sm:mt-16">
+             <span className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}>{'}'}</span>
+           </div>
+         </div>
+       </section>
 
-      {/* Projects Section */}
+       {/* Education Section */}
+       <section id="education" className={`py-16 sm:py-20 px-4 sm:px-6 lg:px-8 ${theme.sectionBg}`}>
+         <div className="max-w-4xl mx-auto">
+           <div className="text-center mb-12 sm:mb-16">
+             <h2 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-4`}>
+               <span className="text-blue-500">function</span> loadEducation() {'{'}
+             </h2>
+           </div>
+           
+           <div className="space-y-8">
+             {education.map((edu, index) => (
+               <div key={index} className={`${theme.cardBg} rounded-lg border border-blue-500/20 p-6 sm:p-8 hover:border-blue-500/40 transition-all`}>
+                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                   <div className="flex items-center space-x-3">
+                     <div className={`p-2 rounded-lg bg-blue-500/10`}>
+                       <Terminal className="w-5 h-5 text-blue-500" />
+                     </div>
+                     <div>
+                       <h3 className={`text-xl sm:text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-2`}> {edu.degree} </h3>
+                       <p className="text-blue-500 text-base sm:text-lg">{edu.school}</p>
+                     </div>
+                   </div>
+                   <div className="mt-2 lg:mt-0 lg:text-right">
+                     <p className="text-gray-500 font-mono text-sm sm:text-base">{edu.period}</p>
+                   </div>
+                 </div>
+                 <p className={`${theme.textSecondary} text-sm sm:text-base italic`}>{edu.details}</p>
+               </div>
+             ))}
+           </div>
+           
+           <div className="text-center mt-12 sm:mt-16">
+             <span className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}>{'}'}</span>
+           </div>
+         </div>
+       </section>
+
+       {/* Projects Section */}
       <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
@@ -473,18 +514,38 @@ const experiences = [
                     </span>
                   ))}
                 </div>
-                {project && project.github ? (<><div className="flex justify-between items-center">
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-red-500 hover:text-red-400 transition-colors text-sm sm:text-base"
-                  >
-                    <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                    view source
-                  </a>
-                  <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500" />
-                </div></>) : (<></>)}
+                {project && (project.github || project.live) ? (
+                  <>
+                    <div className="flex justify-between items-center">
+                      {project.github ? (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-red-500 hover:text-red-400 transition-colors text-sm sm:text-base"
+                        >
+                          <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                          view source
+                        </a>
+                      ) : (
+                        <span />
+                      )}
+
+                      {project.live ? (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-gray-500 hover:text-gray-400 transition-colors text-sm sm:text-base"
+                        >
+                          <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+                        </a>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
+                  </>
+                ) : null}
                 
               </div>
             ))}
@@ -497,35 +558,39 @@ const experiences = [
       </section>
 
 
-      {/* Skills Section */}
-      <section id="skills" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-4`}>
-              <span className={`${theme.accentText}`}>const</span> skills = {'{'}
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {Object.entries(skillCategories).map(([category, skills]) => (
-              <div key={category} className={`${theme.cardBg} rounded-lg ${theme.cardBorder} p-4 sm:p-6 ${theme.cardHoverBorder} transition-all`}>
-                <h3 className={`${theme.accentText} font-bold mb-4 sm:mb-6 text-base sm:text-lg`}>{category}:</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                  {skills.map((skill, index) => (
-                    <div key={index} className={`${theme.text} text-xs sm:text-sm ${isDarkMode ? 'bg-gray-800' : 'bg-gray-200'} px-2 sm:px-3 py-2 rounded border ${isDarkMode ? 'border-gray-700' : 'border-gray-300'}`}>
-                      {skill}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12 sm:mt-16">
-            <span className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}>{'}'}</span>
-          </div>
-        </div>
-      </section>
+       {/* Skills Section */}
+       <section id="skills" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+         <div className="max-w-4xl mx-auto">
+           <div className="text-center mb-12 sm:mb-16">
+             <h2 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-4`}>
+               <span className={`${theme.accentText}`}>const</span> skills = {'{'}
+             </h2>
+           </div>
+           
+           <div className={`${theme.cardBg} rounded-2xl border ${theme.cardBorder} p-6 sm:p-10 shadow-xl`}>
+             <div className="space-y-8">
+               {Object.entries(skillCategories).map(([category, skills]) => (
+                 <div key={category} className="flex flex-col sm:flex-row sm:items-center gap-4">
+                   <div className={`w-32 shrink-0 font-bold ${theme.accentText} text-sm sm:text-base tracking-wider uppercase`}>
+                     {category}
+                   </div>
+                   <div className="flex flex-wrap gap-2">
+                     {skills.map((skill, index) => (
+                       <span key={index} className={`text-xs sm:text-sm px-3 py-1 rounded-md border transition-all duration-200 ${isDarkMode ? 'bg-gray-800 border-gray-700 text-gray-400 hover:text-white hover:border-purple-500/50' : 'bg-gray-100 border-gray-300 text-gray-600 hover:text-black hover:border-emerald-500/50'}`}>
+                         {skill}
+                       </span>
+                     ))}
+                   </div>
+                 </div>
+               ))}
+             </div>
+           </div>
+           
+           <div className="text-center mt-12 sm:mt-16">
+             <span className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'}`}>{'}'}</span>
+           </div>
+         </div>
+       </section>
 
 
 
@@ -573,7 +638,7 @@ const experiences = [
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center items-center space-x-4 mb-4">
             <Terminal className={`w-4 h-4 sm:w-5 sm:h-5 ${theme.accentText}`} />
-            <span className={`${theme.textSecondary} text-sm sm:text-base`}>© 2025 Nikunj Pradhan</span>
+            <span className={`${theme.textSecondary} text-sm sm:text-base`}>© 2026 Nikunj Pradhan</span>
           </div>
           <p className={`${theme.textMuted} text-xs sm:text-sm`}>
             Built with React, Tailwind CSS, and lots of momo 🥟
