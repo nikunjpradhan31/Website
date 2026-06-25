@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, Menu, X, ArrowUp, ChevronRight, Download, Sun, Moon} from 'lucide-react';
-import nikunjPfp from './assets/nikunj_pfp.jpeg';
+import nikunjPfp from './assets/nikunj_pradhan_pfp_2026.jpeg';
 import dataScience from './assets/Nikunj_Pradhan_Data_Resume_5_30_26.pdf';
 import SWE from './assets/Nikunj_Pradhan_SWE_Resume_5_30_26.pdf';
 
@@ -170,7 +170,7 @@ const skillCategories = {
 
   {
   "title": "Homelab",
-  "description": "Personal server setup running Ubuntu 22.04, hosting Open WebUI contains a personal AI server channel ,featuring Caddy reverse proxy, PostgreSQL databases, NAS storage, and hosting multiple websites including this portfolio and HimalayanHut.",
+  "description": "Personal server setup running Ubuntu 22.04, hosting Open WebUI contains a personal AI server channel, featuring Caddy reverse proxy, PostgreSQL databases, NAS storage, and hosting multiple websites including this portfolio and HimalayanHut.",
   "tech": ["Ubuntu 22.04", "Caddy", "PostgreSQL", "NAS Storage", "Docker", "NGINX", "Reverse Proxy", "Web Hosting"],
   "github": null,
   "live": null,
@@ -221,7 +221,7 @@ const experiences = [
 
   },
   {
-    title: "Backend Engineer",
+    title: "Software Engineer",
     company: "Tally Receipts",
     period: "June 2025 – December 2025",
     achievements: 
