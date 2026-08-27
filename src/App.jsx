@@ -212,12 +212,8 @@ const experiences = [
     company: "Hunter Engineering Company",
     period: "January 2025 – August 2025",
     achievements: [
-  "Improved image-based alphanumeric and regional classification accuracy from 56% to 84% through deep learning architecture refinement and hyperparameter optimization on noisy, imbalanced datasets.",
-  "Engineered real-time production model dashboards, data pipelines, dataset analytical platform, and AI-assisted annotation endpoints.",
-  "Built a CNN-based regression model predicting 4-point image coordinates, improving geometric correction accuracy by 23% and streamlining preprocessing.",
-  "Automated cross-cloud benchmarking pipelines across AWS and Azure, enabling direct performance comparisons of vendor AI/ML models to drive strategic evaluation and decision-making.",
-  "Created and maintained custom ETL pipelines using FastAPI and Python to clean, validate, and process metadata and image data from 600+ worksites ingesting over 2M images",
-]
+    "Developed and optimized end-to-end machine learning and data pipelines for large-scale image analytics, improving model accuracy from 56% to 84% and enhancing preprocessing through CNN-based geometric correction. Built ETL pipelines, real-time dashboards, and AI-assisted annotation tools to process over 2 million images from 600+ worksites, while automating cross-cloud benchmarking to evaluate AI/ML model performance"
+    ]
 
   },
   {
@@ -226,23 +222,16 @@ const experiences = [
     period: "June 2025 – December 2025",
     achievements: 
     [
-  "Redesigned and migrated backend from MongoDB to AWS DynamoDB, redesigning schemas for efficient querying, scalability, and data lifecycle management.",
-  "Integrated secure card linking API for application linking, designed business logic for safe card tracking in the database, and implemented webhooks to collect user purchase receipts.",
-  "Built an LLM-powered receipt categorization service for receipt summarization and classification, integrating with calendar workflows to reduce manual entry effort for users.",
-  "Implemented S3 file upload flows with pre-signed URLs and collaborated with the React Native frontend to maintain API compatibility post-migration",
-
+"Engineered scalable backend services by migrating infrastructure from MongoDB to AWS DynamoDB, optimizing data models, and implementing secure APIs, webhooks, and S3-based file upload workflows. Developed an LLM-powered receipt processing service for automated categorization and summarization while collaborating with React Native team."
 ]
   },
     {
-    title: "Computer Vision Researcher",
+    title: "Research Assistant - Computer Vision",
     company: "Missouri University of Science and Technology",
     period: "August 2023 – December 2024",
     achievements: [
-
-      "Optimized algorithms, increasing blob analysis accuracy 62% through hyperparameter tuning, and algorithmic refinement using C++ OpenCV and MATLAB.",
-"Designed a C++/MATLAB application simulating 3D triaxial shear tests with deep learning and parallel computing for soil compression modeling with Point Cloud Library.",
-"Utilized advanced computer vision techniques, including watershed segmentation and 3D model triangulation via ray tracing, and used a KNN-based algorithm for point classification.",
-]
+"Developed computer vision and simulation algorithms using C++, OpenCV, MATLAB, and the Point Cloud Library, improving blob analysis accuracy by 62% through algorithm refinement and hyperparameter optimization. Built 3D soil compression modeling tools using deep learning, parallel computing, and advanced image processing techniques, including watershed segmentation, ray tracing, and KNN-based point classification."
+    ]
 
   },
 ];
