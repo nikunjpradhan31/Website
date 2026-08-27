@@ -76,16 +76,17 @@ const App = () => {
 const skillCategories = {
   Languages: [
     "Python",
-    "JavaScript",
-    "SQL",
+    "Java",
     "C++",
-    "Java"
+    "SQL",
+    "JavaScript"
+
   ],
   Frameworks: [
     "FastAPI",
+    "Spring Boot",
     "React.js",
     "Express.js",
-    "Spring Boot",
   ],
   Databases: [
     "PostgreSQL",
@@ -99,32 +100,44 @@ const skillCategories = {
   Deployment: [
     "Docker",
     "Kubernetes",
+    "Databricks",
     "NGINX",
     "AWS",
     "CI/CD",],
 
   Libraries: [
     "NumPy",
-    "SciPy",
+    "Apache Kafka",
+    "Apache Spark (PySpark)",
     "Pandas",
     "Matplotlib",
     "OpenCV",
     "Playwright",
-    "BeautifulSoup",
+
   ],
   ML: [
     "PyTorch",
     "Scikit-learn",
+    "XGBoost",
     "Recommendation Systems",
     "RAG",
-    "MLOps",
-    "LLMOps",
+    "LangChain",
+    "LangGraph",
   ]
 };
 
   const projects = [
 {
-  title: "Himalayan Hut",
+    
+    "title": "Nepali Devanagari OCR",
+    "description": "Built a custom CRNN-based Nepali Devanagari OCR pipeline (CNN + BiLSTM + Attention) recognizing 130+ characters at 7.1% CER and 18.9% WER; deployed a Dockerized FastAPI service with ONNX Runtime, achieving 3x faster CPU inference (3s) with batch sizes up to 16.",
+    "tech": ["Python", "Pytorch", "Docker", "FastAPI", "ONNX", "Seq2Seq"],
+    "github": "https://github.com/nikunjpradhan31/NepaliDevanagariVision",
+    "live": null,
+    "status": "Deployed"
+  },
+{
+  title: "Movie Recommendation Application",
   description: "Full-stack movie watchlist and recommendation app with personalized recommendations, secure 2FA login, and self-hosted deployment using Docker, NGINX, and Kubernetes.",
   tech: ["React", "FastAPI", "PostgreSQL", "MinIO", "Scikit-learn", "Python", "Docker","Kubernetes"],
   github: "https://github.com/nikunjpradhan31/TheHimalayanHut",
@@ -132,18 +145,18 @@ const skillCategories = {
   status: "Deployed"
 },
   {
-    "title": "Nepali Devanagari OCR",
-    "description": "Built a Nepali OCR pipeline with CRNN architecture using ResNet and LSTM/Bi-LSTM models; compared CTC and Attention mechanisms, benchmarked against PaddleOCR and EasyOCR, collected and augmented 800+ text images, and deployed via FastAPI for real-time and batch inference with CER/WER evaluation.",
-    "tech": ["Python", "Pytorch", "OpenCV", "FastAPI", "CRNN", "Seq2Seq"],
-    "github": "https://github.com/nikunjpradhan31/NepaliDevanagariVision",
+    "title": "FIFA World Cup Prediction & Simulation",
+    "description": "Boosted match prediction accuracy from 58% to 64% with an XGBoost forecasting pipeline; applied temperature scaling for calibrated probabilities (0.19 mean RPS), and leveraged Monte Carlo simulations to forecast tournament outcomes.",
+    "tech": ["XGBoost", "Scikit-learn", "Pandas", "NumPy"],
+    "github": "https://github.com/nikunjpradhan31/WorldCupPredictionModeling",
     "live": null,
-    "status": "Deployed"
+    "status": "Completed"
   },
 
     {
     "title": "Hybrid GNN-Mamba Model for Toxicity Prediction",
     "description": "Designed a parallel GIN + Mamba hybrid architecture for multi-task molecular toxicity prediction on Tox21. Innovated a graph-to-sequence mapping strategy achieving 75% ROC-AUC and 36% PR-AUC under scaffold split",
-    "tech": ["Pytorch Geometric", "Mamba-SMM", "RDkit", "Tox21" ],
+    "tech": ["Pytorch Geometric", "Mamba-SMM", "Tox21" ],
     "github": "https://github.com/nikunjpradhan31/Tox21-Modeling",
     "live": null,
     "status": "Completed"
@@ -151,7 +164,7 @@ const skillCategories = {
 
     {
     "title": "Blackjack Computer Vision Edge Analyzer",
-    "description": "Architected a high-throughput decision engine integrating a CV pipeline and Apache Kafka to stream real-time data into a NumPy-vectorized Monte Carlo engine, simulating 100,000 concurrent states to calculate optimal Expected Value (EV).",
+    "description": "Architected a high-throughput decision engine integrating a CV pipeline and Apache Kafka to stream real-time data into a NumPy-vectorized Monte Carlo engine, simulating 100,000 concurrent states to calculate optimal Expected Value (EV) for BlackJack outcomes.",
     "tech": ["FastAPI", "Numpy", "Apache Kafka"],
     "github": "https://github.com/nikunjpradhan31/FullHouseDevs",
     "live": null,
@@ -178,19 +191,19 @@ const skillCategories = {
 },
 
     {
-  title: "Rhino Chat",
+  title: "Real-time Messaging Application",
   description:"Real-time chat app supporting secure one-on-one and group messaging, file sharing, persistent chat history, and a responsive mobile-first interface.",
-  tech: ["React", "JavaScript", "Express.js", "MongoDB", "Socket.IO", "GridFS"],
+  tech: ["React", "JavaScript", "Express.js", "MongoDB", "WebSockets"],
   github: "https://github.com/nikunjpradhan31/Rhino",
   status: "Complete"
 },
 
-  {
-    title: "Triaxial Shear Test Analyzer",
-    description: "MATLAB/C++ app for analyzing triaxial shear tests using CV techniques, blob analysis, and k-NN to track deformation and reconstruct missing data, generating 3D models for research and visualization.",
-    tech: ["C++","MATLAB", "App Designer", "MATLAB Deep Learning Toolbox", "Computer Vision", "Point Cloud", "OpenCV"],
-    status: "Complete"
-  },
+  // {
+  //   title: "Triaxial Shear Test Analyzer",
+  //   description: "MATLAB/C++ app for analyzing triaxial shear tests using CV techniques, blob analysis, and k-NN to track deformation and reconstruct missing data, generating 3D models for research and visualization.",
+  //   tech: ["C++","MATLAB", "App Designer", "MATLAB Deep Learning Toolbox", "Computer Vision", "Point Cloud", "OpenCV"],
+  //   status: "Complete"
+  // },
 
 
     
@@ -204,16 +217,17 @@ const experiences = [
     company: "Quest Analytics",
     period: "May 2026 – Present",
     achievements: [
+  "Standardized 12M+ Medicaid provider records from 20+ state sources into a unified 3M-provider gold dataset, expanding coverage by 42% and resolving 3,000+ records with a LangGraph-based entity resolution tool that routes tasks across LLMs to optimize inference cost and latency."
 ]
 
   },
   {
-    title: "Data Science Co-Op",
+    title: "ML Software Engineer Co-Op",
     company: "Hunter Engineering Company",
     period: "January 2025 – August 2025",
     achievements: [
-    "Developed and optimized end-to-end machine learning and data pipelines for large-scale image analytics, improving model accuracy from 56% to 84% and enhancing preprocessing through CNN-based geometric correction. Built ETL pipelines, real-time dashboards, and AI-assisted annotation tools to process over 2 million images from 600+ worksites, while automating cross-cloud benchmarking to evaluate AI/ML model performance"
-    ]
+    "Improved image classification accuracy from 56% to 84% through deep learning refinement, and built ETL pipelines, real-time dashboards, and AI-assisted annotation tools processing 2M+ images across 600+ worksites."
+]
 
   },
   {
@@ -222,16 +236,16 @@ const experiences = [
     period: "June 2025 – December 2025",
     achievements: 
     [
-"Engineered scalable backend services by migrating infrastructure from MongoDB to AWS DynamoDB, optimizing data models, and implementing secure APIs, webhooks, and S3-based file upload workflows. Developed an LLM-powered receipt processing service for automated categorization and summarization while collaborating with React Native team."
+"Migrated backend infrastructure from MongoDB to AWS DynamoDB with redesigned schemas, and built an LLM-powered receipt processing service for automated categorization and summarization."
 ]
   },
     {
-    title: "Research Assistant - Computer Vision",
+    title: "Research Assistant",
     company: "Missouri University of Science and Technology",
     period: "August 2023 – December 2024",
     achievements: [
-"Developed computer vision and simulation algorithms using C++, OpenCV, MATLAB, and the Point Cloud Library, improving blob analysis accuracy by 62% through algorithm refinement and hyperparameter optimization. Built 3D soil compression modeling tools using deep learning, parallel computing, and advanced image processing techniques, including watershed segmentation, ray tracing, and KNN-based point classification."
-    ]
+"Improved point tracking accuracy by 62% by replacing deterministic OpenCV methods with a custom deep learning model and a kNN classifier for point-type categorization and built 3D soil compression modeling tools using C++, OpenCV, MATLAB."
+]
 
   },
 ];
@@ -241,13 +255,13 @@ const education = [
     degree: "Master of Science in Computer Science",
     school: "Missouri University of Science and Technology",
     period: "Expected 2026 - GPA 4.0/4.0",
-    details: "Specializing in Data Science and Machine Learning Deployment."
+    details: "Specializing in Data Science and MLOps / LLMOps."
   },
   {
     degree: "Bachelor of Science in Computer Science",
     school: "Missouri University of Science and Technology",
     period: "2023 – 2026 -  GPA 4.0/4.0",
-    details: "Specializing in System Design Architecture, Data Science, and Software Engineering."
+    details: "Specializing in System Design Architecture and Software Engineering."
   }
 ];
 
