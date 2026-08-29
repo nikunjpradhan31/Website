@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, Menu, X, ArrowUp, ChevronRight, Download, Sun, Moon} from 'lucide-react';
 import nikunjPfp from './assets/nikunj_pradhan_pfp_2026.jpeg';
-import dataScience from './assets/Nikunj_Pradhan_Data_Resume_5_30_26.pdf';
-import SWE from './assets/Nikunj_Pradhan_SWE_Resume_5_30_26.pdf';
+import dataScience from './assets/Nikunj_Pradhan_Data_Resume.pdf';
+import SWE from './assets/Nikunj_Pradhan_SWE_Resume.pdf';
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -236,16 +236,15 @@ const experiences = [
     period: "June 2025 – December 2025",
     achievements: 
     [
-"Migrated backend infrastructure from MongoDB to AWS DynamoDB with redesigned schemas, and built an LLM-powered receipt processing service for automated categorization and summarization."
-]
+"Built and modernized backend systems for a beta-stage receipt management platform using AWS, DynamoDB, event-driven webhooks, calendar integrations, and LLM-powered receipt processing."
+    ]
   },
     {
     title: "Research Assistant",
     company: "Missouri University of Science and Technology",
     period: "August 2023 – December 2024",
     achievements: [
-"Improved point tracking accuracy by 62% by replacing deterministic OpenCV methods with a custom deep learning model and a kNN classifier for point-type categorization and built 3D soil compression modeling tools using C++, OpenCV, MATLAB."
-]
+"Developed computer vision and 3D reconstruction pipelines using deep learning, OpenCV, and C++ to accurately track soil deformation and generate precise compression models for civil engineering research."]
 
   },
 ];
