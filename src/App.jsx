@@ -139,7 +139,7 @@ const skillCategories = {
 {
   title: "Movie Recommendation Application",
   description: "Full-stack movie watchlist and recommendation app with personalized recommendations, secure 2FA login, and self-hosted deployment using Docker, NGINX, and Kubernetes.",
-  tech: ["React", "FastAPI", "PostgreSQL", "MinIO", "Scikit-learn", "Python", "Docker","Kubernetes"],
+  tech: ["Spring Boot", "FastAPI","React", "PostgreSQL", "Redis", "Scikit-learn", "Python", "Docker","Kubernetes"],
   github: "https://github.com/nikunjpradhan31/TheHimalayanHut",
   live: "https://himalapp.nikunjpradhan.com",
   status: "Deployed"
