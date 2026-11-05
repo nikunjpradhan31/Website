@@ -217,7 +217,7 @@ const experiences = [
     company: "Quest Analytics",
     period: "May 2026 – Present",
     achievements: [
-  "Standardized 12M+ Medicaid provider records from 20+ state sources into a unified 3M-provider gold dataset, expanding coverage by 42% and resolving 3,000+ records with a LangGraph-based entity resolution tool that routes tasks across LLMs to optimize inference cost and latency."
+  "Standardized 12M+ Medicaid provider records from 20+ state sources into a unified 3M-provider gold dataset, expanding coverage by 42% and resolving 3,000+ records with a multi-agent research tool for entity resolution that routes tasks across LLMs to optimize inference cost and latency."
 ]
 
   },
@@ -347,7 +347,7 @@ const education = [
                     <span className={isDarkMode ? 'text-white' : 'text-black'}>$ whoami</span>
                   </div>
                   <div className={`${theme.text} mb-4 text-sm sm:text-base`}>
-                    Software Engineer | Data Scientist | DevOps Engineer |  Undergraduate & Graduate Computer Science Student @ Missouri S&T
+                    Software Engineer | Data Scientist | Data Engineer |  Graduate Computer Science Student @ Missouri S&T
                   </div>
                   <div className={`${theme.accentText} text-sm sm:text-base break-all`}>
                     <span className="text-red-500">nikunj@portfolio</span>
@@ -364,7 +364,7 @@ const education = [
                 <span className={`${theme.accentText}`}>Nikunj </span>
               </h1>
               <p className={`text-lg sm:text-xl ${theme.textSecondary} mb-6 sm:mb-8 leading-relaxed`}>
-              I'm a Senior in Computer Science at Missouri S&T and I am currently working as a Data Science Intern at Quest Analytics. My goal is to become an experienced Data Scientist and Software Engineer.
+              I'm a graduate student in Computer Science at Missouri S&T and I am currently working as a Data Science Intern at Quest Analytics. My goal is to become an experienced Software Engineer and Data Scientist.
               </p>
 
               <div className="flex space-x-4 sm:space-x-6">
@@ -602,9 +602,9 @@ const education = [
           <h2 className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-6 sm:mb-8`}>
             <span className={`${theme.accentText}`}>async</span> connect() {'{'}
           </h2>
-          <p className={`${theme.text} text-base sm:text-lg mb-8 sm:mb-12`}>
-            Let's build something amazing together. Always open to new opportunities and collaborations.
-          </p>
+          {/* <p className={`${theme.text} text-base sm:text-lg mb-8 sm:mb-12`}>
+          Something
+          </p> */}
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             <a href="mailto:nikunj.pradhan31@gmail.com"
@@ -642,9 +642,9 @@ const education = [
             <Terminal className={`w-4 h-4 sm:w-5 sm:h-5 ${theme.accentText}`} />
             <span className={`${theme.textSecondary} text-sm sm:text-base`}>© 2026 Nikunj Pradhan</span>
           </div>
-          <p className={`${theme.textMuted} text-xs sm:text-sm`}>
+          {/* <p className={`${theme.textMuted} text-xs sm:text-sm`}>
             Built with React, Tailwind CSS, and lots of momo 🥟
-          </p>
+          </p> */}
         </div>
       </footer>
 
